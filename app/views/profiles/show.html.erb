@@ -55,6 +55,6 @@
 <% end %>
 
 <% if current_user.following?(@profile.user) && @profile.user.following?(current_user) %>
-  <%= link_to 'DMを始める', chat_path(@profile.user.id), class: "ml-3" %>
+  <%= link_to 'DMを始める', rooms_path(sender_id: current_user.id, recipient_id: @profile.user.id), method: :post, class: "ml-3" %>
 <% end %>
 

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :profiles
   root 'profiles#index'
-  resources :chats, only: [:show, :create, :index]
+  resources :rooms, only: [:index, :create]
+  resources :chats, only: [:index, :create, :show]
+
   resources :chatbots, only: [:index]
   resources :answers, only: [:new, :create]
 

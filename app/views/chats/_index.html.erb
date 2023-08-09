@@ -1,0 +1,27 @@
+<% if @over_ten %>
+  <%= link_to '以前のメッセージ', rooms_path(@room, m: 'all') %>
+<% end %>
+
+<div class="ui segment">
+<% unless chats.blank? %>
+  <% chats.each do |chat| %>
+    <% if chat.message.present? %>
+      <div class="item">
+        <div class="content">
+          <div class="header"><strong><%= chat.user.email %></strong> <%= chat.message_time %></div>
+          <div class="list">
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <%= chat.message %> /
+              <% if chat.user == current_user %>
+                <%= chat.read ? '既読' : '未読' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <% end %>
+</div>
+

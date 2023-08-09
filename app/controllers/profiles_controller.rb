@@ -41,9 +41,9 @@ class ProfilesController < ApplicationController
 
   def new
     if current_user.profile.nil?
-      @profile = Profile.new(name: "名無し")
+      @profile = Profile.new
     else
-      redirect_to profile_path(current_user.profile)
+      redirect_to pages_show_path
     end
   end
 
