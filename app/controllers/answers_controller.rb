@@ -29,7 +29,6 @@ class AnswersController < ApplicationController
     end
     @answers = current_user.answers.build(answer_params)
     @answers.response
-    binding.pry
     if @answers.save
       redirect_to pages_show_path(current_user.profile), notice: '回答が保存されました。'
     else

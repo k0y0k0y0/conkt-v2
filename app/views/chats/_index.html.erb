@@ -2,9 +2,9 @@
   <%= link_to '以前のメッセージ', rooms_path(@room, m: 'all') %>
 <% end %>
 
-<div class="ui segment chats_area">
-<% unless @chats.blank? %>
-  <% @chats.each do |chat| %>
+<div class="ui segment">
+<% unless chats.blank? %>
+  <% chats.each do |chat| %>
     <% if chat.message.present? %>
       <div class="item">
         <div class="content">
@@ -24,13 +24,3 @@
   <% end %>
   <% end %>
 </div>
-
-<%= form_with(model: [@room, @chat], url: chats_path(room_id: @room.id), remote: true) do |f| %>
-  <div class="field">
-    <%= f.text_area :message, class: "form-control" %>
-  </div>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <div>
-    <%= f.submit "メッセージを送る" %>
-  </div>
-<% end %>

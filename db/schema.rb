@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_08_023330) do
+ActiveRecord::Schema.define(version: 2023_08_08_083222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2023_08_08_023330) do
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "read", default: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -64,6 +65,11 @@ ActiveRecord::Schema.define(version: 2023_08_08_023330) do
   create_table "rooms", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.index ["recipient_id"], name: "index_rooms_on_recipient_id"
+    t.index ["sender_id", "recipient_id"], name: "index_rooms_on_sender_id_and_recipient_id", unique: true
+    t.index ["sender_id"], name: "index_rooms_on_sender_id"
   end
 
   create_table "user_rooms", force: :cascade do |t|
