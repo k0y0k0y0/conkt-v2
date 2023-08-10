@@ -1,0 +1,2 @@
+$("#js-favorites-delete-button").replaceWith('<%= escape_javascript(link_to "お気に入りする", favorites_path(profile_id: @profile.id),
+method: :post, class: "btn btn-primary favorite-button", remote: true, data: {profile_id: @profile.id}, id: "js-favorites-create-button") %>');

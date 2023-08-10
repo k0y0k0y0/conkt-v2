@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :chatbots, only: [:index]
   resources :answers, only: [:new, :create]
 
+  resource :favorites, only: [:create, :destroy, :show]
+
   resources :users do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'

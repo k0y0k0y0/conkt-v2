@@ -20,11 +20,11 @@ class ProfilesController < ApplicationController
     end
   end
 
-
   def show
     @profile = Profile.find(params[:id])
     @icon_url = @profile.icon.present? ? @profile.icon.url : Profile.default_icons.sample
     @love_match = calculate_love_match(current_user.answer.response, @profile.user.answer.response)
+    @favorite = current_user.favorites.find_by(profile_id: @profile.id)
   end
 
   def new

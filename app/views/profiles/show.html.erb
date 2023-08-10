@@ -7,6 +7,12 @@
   <%= image_tag default_icon, class: 'profile-icon' %>
 <% end %>
 
+<% if @favorite.present? %>
+  <%= link_to 'お気に入り解除する', favorites_path(profile_id: @profile.id), method: :delete, remote: true, class: 'btn btn-danger', id: "js-favorites-delete-button" %>
+<% else %>
+  <%= link_to 'お気に入りする', favorites_path(profile_id: @profile.id), method: :post, remote: true, class: 'btn btn-primary', id: "js-favorites-create-button" %>
+<% end %>
+
 <h2><%= @profile.name %>さんとの相性</h2>
 <p>相性率: <%= @love_match %>%</p>
 
