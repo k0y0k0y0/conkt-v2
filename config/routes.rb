@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :profiles
 
+  #ゲストログイン
+  post '/pages/guest_sign_in', to: 'pages#guest_sign_in'
+
   root 'pages#index'
   resources :rooms, only: [:index, :create]
   resources :chats, only: [:index, :create, :show]

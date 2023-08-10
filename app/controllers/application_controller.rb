@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     new_profile_path
   end
+
+  def guest?
+    session[:guest_user_id].present?
+  end
+
+  helper_method :guest?
 end
