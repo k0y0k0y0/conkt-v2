@@ -2,15 +2,15 @@ class AnswersController < ApplicationController
   def new
     @profile = current_user.profile
     @questions = Question.all
-    @answers = current_user.answers.build
+    @answer = current_user.answer || current_user.build_answer
   end
 
   def create
     answer_data = params[:answers].values.map { |value| value[:response] }
-    @answers = current_user.answers.build(response: answer_data)
+    @answer = current_user.answer || current_user.build_answer
+    @answer.response = answer_data
 
-
-    if @answers.save
+    if @answer.save
       redirect_to pages_show_path, notice: '回答が保存されました。'
     else
       render :new

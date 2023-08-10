@@ -1,7 +1,6 @@
 <h2>相性診断</h2>
 
-<%= form_for @answers do |f| %>
-
+<%= form_for @answer do |f| %>
   <% @questions.each_with_index do |question, index| %>
     <div class="question">
       <p><%= question.content %></p>
