@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   #相性診断
   has_many :questions
-  has_many :answers
+  has_one :answer
 
   #DM機能
   has_many :user_rooms
