@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 
   #男女の番号を保存させる
   enum sex: { man: 0, woman: 1}

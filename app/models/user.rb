@@ -20,6 +20,10 @@ class User < ApplicationRecord
   has_many :chats
   has_many :rooms, through: :user_rooms
 
+  #お気に入り機能
+  has_many :favorites, dependent: :destroy
+
+
   # フォローしたときの処理
   def follow(user_id)
     relationships.create(followed_id: user_id)
@@ -35,5 +39,9 @@ class User < ApplicationRecord
   #相互フォロー一覧
   def mutual_followings
     followings & followers
+  end
+
+  def already_favorited?(profile)
+    self.favorites.exists?(profile_id: profile.id)
   end
 end
