@@ -24,19 +24,7 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @icon_url = @profile.icon.present? ? @profile.icon.url : Profile.default_icons.sample
-
-    @user_answers = current_user.answers.includes(:question)
-    @profile_answers = @profile.user.answers.includes(:question)
-
-    # 質問ごとに一致している回答をカウント
-    @compatibility_score = 0
-    @user_answers.each_with_index do |user_answer, index|
-      @compatibility_score += 1 if user_answer.response == @profile_answers[index].response
-    end
-
-    # 相性率を計算
-    total_score = @user_answers.length
-    @compatibility_percentage = (@compatibility_score.to_f / total_score * 100).round(2)
+    @love_match = calculate_love_match(current_user.answer.response, @profile.user.answer.response)
   end
 
   def new
@@ -94,7 +82,26 @@ class ProfilesController < ApplicationController
     end
   end
 
+
   private
+
+  #相性診断の％計算
+  def calculate_love_match(user1, user2)
+    score = calculate_score(user1, user2)
+    min_percentage = 40
+    percentage_increase_per_point = 4
+    min_percentage + (score * percentage_increase_per_point)
+  end
+
+  #相性診断の回答一致数
+  def calculate_score(user1, user2)
+    score = 0
+    user1.each_with_index do |love_answer, index|
+      score += 1 if love_answer == user2[index]
+    end
+    score
+  end
+
 
   def set_profile
       @profile = Profile.find(params[:id])
