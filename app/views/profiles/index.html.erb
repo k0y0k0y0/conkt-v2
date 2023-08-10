@@ -8,26 +8,25 @@
           <td>
             <% if profile.icon.present? %>
               <%= link_to profile_path(profile) do %>
-              <%= image_tag profile.icon.url, class: 'profile-icon' %>
+                <%= image_tag profile.icon.url, class: 'profile-icon' %>
               <% end %>
-
-              <% else %>
+            <% else %>
               <% default_icon = Profile.default_icons.sample %>
-                <%= link_to profile_path(profile) do %>
+              <%= link_to profile_path(profile) do %>
                 <%= image_tag default_icon, class: 'profile-icon' %>
-                <% end %>
               <% end %>
+            <% end %>
             <br>
             <%= profile.name %>
           </td>
           <td><%= link_to 'Show', profile_path(profile) %></td>
           <% if profile.user == current_user %>
-          <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-          <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+            <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% else %>
-          <td></td>
-          <td></td>
-        <% end %>
+            <td></td>
+            <td></td>
+          <% end %>
         </tr>
       <% end %>
     <% end %>

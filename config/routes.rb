@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'pages/show'
   devise_for :users
   resources :profiles
-  root 'profiles#index'
+
+  root 'pages#index'
   resources :rooms, only: [:index, :create]
   resources :chats, only: [:index, :create, :show]
 

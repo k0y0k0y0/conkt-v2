@@ -4,19 +4,15 @@ class ProfilesController < ApplicationController
 
   def index
     if current_user && current_user.profile
+      @profiles = Profile.where.not(user_id: current_user.id)
+
       if current_user.profile.sex == 'man'
-        # ログインしているユーザーが男性の場合は、女性のプロフィールのみを表示
-        @profiles = Profile.where.not(id: current_user.profile.id, sex: 'man').page(params[:page]).per(50).order("created_at DESC")
+        @profiles = @profiles.where(sex: 'woman')
       elsif current_user.profile.sex == 'woman'
-        # ログインしているユーザーが女性の場合は、男性のプロフィールのみを表示
-        @profiles = Profile.where.not(id: current_user.profile.id, sex: 'woman').page(params[:page]).per(50).order("created_at DESC")
+        @profiles = @profiles.where(sex: 'man')
       else
-        # ログインしているユーザーが性別を選択していない場合は全てのプロフィールを表示
-        @profiles = Profile.page(params[:page]).per(50).order("created_at DESC")
-      end
-    else
-      # プロフィールを作成していない場合は、プロフィール作成ページへ飛ばす
       redirect_to new_profile_path
+      end
     end
   end
 
@@ -81,7 +77,6 @@ class ProfilesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 
   private
 
