@@ -11,6 +11,7 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    @favorites = Favorite.all
+
+    @favorites = current_user.favorites.includes(:profile)
   end
 end
