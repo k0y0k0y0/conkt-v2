@@ -19,7 +19,11 @@
               <div class="user-info">
                 <strong><%= target_user.profile.name %></strong>
                 <div class="last-message">
-                  <%= room.chats.last.message %>
+                  <% if room.chats.last %>
+                    <%= room.chats.last.message %>
+                  <% else %>
+                    No messages yet
+                  <% end %>
                 </div>
               </div>
             </div>

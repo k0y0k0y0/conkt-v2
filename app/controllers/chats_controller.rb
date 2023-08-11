@@ -37,11 +37,6 @@ class ChatsController < ApplicationController
         format.html { redirect_to chats_path(@chat), notice: '投稿できませんでした...' }
       end
     end
-    # if @chat.save
-    #   redirect_to room_chats_path(@room)
-    # else
-    #   render 'index'
-    # end
   end
 
   private
