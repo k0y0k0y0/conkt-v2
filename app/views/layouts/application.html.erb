@@ -11,9 +11,9 @@
 
   <body>
 
-    <% if guest? %>
-      <%= link_to "相性診断ページ", new_answer_path %>
-    <% end %>
+<% if current_user.present? && guest? %>
+  <%= link_to "相性診断ページ", new_answer_path %>
+<% end %>
 
     <% if current_user.try(:admin?) %>
     <%= link_to '管理者ログイン', rails_admin_path %>

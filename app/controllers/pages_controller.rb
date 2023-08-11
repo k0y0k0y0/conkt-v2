@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     # ゲストユーザー作成
     guest_user = User.find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
+
     end
 
     # ゲストユーザーのプロフィール情報作成
@@ -27,6 +28,7 @@ class PagesController < ApplicationController
       likes: 'ゲストの好きなこと',
       comment: 'ゲストからのメッセージ'
     )
+
 
     sign_in guest_user
     session[:guest_user_id] = guest_user.id

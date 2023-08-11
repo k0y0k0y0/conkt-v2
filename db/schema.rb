@@ -79,13 +79,6 @@ ActiveRecord::Schema.define(version: 2023_08_10_031153) do
     t.index ["sender_id"], name: "index_rooms_on_sender_id"
   end
 
-  create_table "user_rooms", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
