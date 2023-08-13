@@ -30,7 +30,7 @@ ja:
       question:
         content: 質問
       user:
-        email: 質問
+        email: メールアドレス
         password: パスワード
         admin: 管理者
 
