@@ -1,6 +1,8 @@
 class ChatsController < ApplicationController
   before_action do
-    @room = Room.find(params[:room_id])
+    if params[:room_id].present?
+      @room = Room.find(params[:room_id])
+    end
   end
 
   def index
