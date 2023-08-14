@@ -24,7 +24,6 @@
         <% end %>
 
         <% if user_signed_in? %>
-          <%= link_to "トップページ", pages_index_path %>
           <%= link_to "参加者一覧", profiles_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <%= link_to "マイページ", pages_show_path %>

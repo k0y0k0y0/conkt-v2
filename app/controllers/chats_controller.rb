@@ -1,7 +1,13 @@
 class ChatsController < ApplicationController
-  before_action do
+  before_action only: [:index] do
     if params[:room_id].present?
       @room = Room.find(params[:room_id])
+    end
+  end
+
+  before_action only: [:create] do
+    if params[:chat][:room_id].present?
+      @room = Room.find(params[:chat][:room_id])
     end
   end
 
@@ -31,6 +37,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = @room.chats.build(chat_params)
+    @chat.user_id = current_user.id
     @chats = @room.chats.order(:created_at)
     respond_to do |format|
       if @chat.save

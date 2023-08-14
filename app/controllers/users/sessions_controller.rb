@@ -16,7 +16,12 @@ class Users::SessionsController < Devise::SessionsController
     )
     profile.save
 
-
+    #相性診断(全てtrue)
+    answer = user.answer || user.build_answer
+    answer.assign_attributes(
+      response: [true] * 15
+    )
+    answer.save
 
     redirect_to pages_index_path, notice: 'ゲストユーザーとしてログインしました。'
   end

@@ -1,21 +1,28 @@
-<% if @over_ten %>
-  <%= link_to '以前のメッセージ', rooms_path(@room, m: 'all') %>
-<% end %>
-
-<div class="ui segment">
-  <% unless chats.blank? %>
-    <% chats.each do |chat| %>
+<div class="ui segment chats_area">
+  <% unless @chats.blank? %>
+    <% @chats.each do |chat| %>
       <% if chat.message.present? %>
         <div class="item">
           <div class="content">
-            <div class="header"><strong><%= chat.user.email %></strong> <%= chat.message_time %></div>
-            <div class="list">
-              <div class="item">
-                <i class="right triangle icon"></i>
-                <%= chat.message %> /
-                <% if chat.user == current_user %>
-                  <%= chat.read ? '既読' : '未読' %>
+            <div class="user-row">
+              <div class="user-icon">
+                <%= link_to profile_path(chat.user.profile) do %>
+                  <%= image_tag chat.user.profile.icon.url, alt: "#{chat.user.profile.name}のアイコン", class: "profile-icon" %>
                 <% end %>
+              </div>
+              <div class="user-info">
+                <div class="header">
+                  <strong><%= link_to chat.user.profile.name, profile_path(chat.user.profile) %></strong> <%= chat.message_time %>
+                </div>
+                <div class="list">
+                  <div class="item">
+                    <i class="right triangle icon"></i>
+                    <%= chat.message %> /
+                    <% if chat.user == current_user %>
+                      <%= chat.read ? '既読' : '未読' %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -24,9 +31,3 @@
     <% end %>
   <% end %>
 </div>
-
-<%= form_with model: @chat, data: { remote: true } do |f| %>
-  <%= f.text_field :message %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <%= f.submit "送信" %>
-<% end %>

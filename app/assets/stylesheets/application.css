@@ -108,3 +108,16 @@ footer {
   max-width: 100px;
   margin: 0 auto; /* 中央寄せ */
 }
+
+.profile-icon {
+  width: 100px; /* 任意のサイズを指定 */
+  height: 100px; /* 任意のサイズを指定 */
+  display: block; /* ブロック要素として表示 */
+  text-align: center; /* テキストを中央揃え */
+  margin-top: 1px; /* アイコンの下に少し隙間を作る */
+}
+
+.profile-name-top {
+  text-align: center; /* テキストを中央揃え */
+  margin-bottom: -10px; /* 名前をアイコンの上に寄せる（適宜調整） */
+}
