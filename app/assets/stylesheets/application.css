@@ -13,3 +13,98 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fffdfa;
+  width: 100%;
+}
+
+header {
+  background-color: #5B503E; /* ヘッダーの背景色 */
+  color: white;
+  padding: 15px 0;
+  width: 100%; /* 横幅を100%に設定 */
+  text-align: center; /* テキストを中央寄せに */
+}
+
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* 調整可能なサイズ */
+  height: 50px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+/* Style alerts */
+.alert {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.alert-notice {
+  background-color: #ffe6f0; /* 薄いピンクのアラート */
+  color: #ca1f47;
+}
+
+.alert-error {
+  background-color: #f9c4d2; /* 薄いピンクのアラート */
+  color: #ca1f47;
+}
+
+/* Style the main content */
+  main {
+    padding: 0; /* 余白をなくす */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    width: 100%; /* 横幅を画面幅いっぱいに設定 */
+    text-align: center; /* テキストを中央寄せに */
+    line-height: 3;
+  }
+
+footer {
+  background-color: #5B503E; /* フッターの背景色 */
+  color: white;
+  padding: 15px 0; /* ヘッダーと同じ高さに設定 */
+  text-align: right;
+  width: 100%; /* フッターを画面幅いっぱいに */
+  box-sizing: border-box; /* パディングを含めたボックスサイズ */
+}
+
+.footer-content {
+  max-width: 100px;
+  margin: 0 auto; /* 中央寄せ */
+}
