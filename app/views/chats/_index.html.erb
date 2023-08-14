@@ -3,25 +3,30 @@
 <% end %>
 
 <div class="ui segment">
-<% unless chats.blank? %>
-  <% chats.each do |chat| %>
-    <% if chat.message.present? %>
-      <div class="item">
-        <div class="content">
-          <div class="header"><strong><%= chat.user.email %></strong> <%= chat.message_time %></div>
-          <div class="list">
-            <div class="item">
-              <i class="right triangle icon"></i>
-              <%= chat.message %> /
-              <% if chat.user == current_user %>
-                <%= chat.read ? '既読' : '未読' %>
-              <% end %>
+  <% unless chats.blank? %>
+    <% chats.each do |chat| %>
+      <% if chat.message.present? %>
+        <div class="item">
+          <div class="content">
+            <div class="header"><strong><%= chat.user.email %></strong> <%= chat.message_time %></div>
+            <div class="list">
+              <div class="item">
+                <i class="right triangle icon"></i>
+                <%= chat.message %> /
+                <% if chat.user == current_user %>
+                  <%= chat.read ? '既読' : '未読' %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
   <% end %>
 </div>
 
+<%= form_with model: @chat, data: { remote: true } do |f| %>
+  <%= f.text_field :message %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.submit "送信" %>
+<% end %>
