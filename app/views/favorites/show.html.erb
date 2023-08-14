@@ -1,11 +1,12 @@
-
 <h1>お気に入りをしているユーザー一覧</h1>
 
 <ul>
   <% @favorites.each do |favorite| %>
     <li>
-      <%= link_to favorite.profile.name, profile_path(favorite.profile.user) %>
-      <%= image_tag favorite.profile.icon.url, class: 'profile-icon' %>
+      <%= link_to profile_path(favorite.profile) do %>
+        <%= favorite.profile.name %>
+        <%= image_tag favorite.profile.icon.url, class: 'profile-icon' %>
+      <% end %>
     </li>
   <% end %>
 </ul>
