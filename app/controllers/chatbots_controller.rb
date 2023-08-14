@@ -20,3 +20,4 @@ class ChatbotsController < ApplicationController
     )
     @answer = response.dig("choices", 0, "message", "content")
   end
+end

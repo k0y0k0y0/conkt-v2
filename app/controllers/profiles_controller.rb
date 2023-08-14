@@ -4,27 +4,28 @@ class ProfilesController < ApplicationController
 
   def index
     if current_user && current_user.profile
+      @profiles = Profile.where.not(user_id: current_user.id)
+
       if current_user.profile.sex == 'man'
-        # ログインしているユーザーが男性の場合は、女性のプロフィールのみを表示
-        @profiles = Profile.where.not(id: current_user.profile.id, sex: 'man').page(params[:page]).per(50).order("created_at DESC")
+        @profiles = @profiles.where(sex: 'woman')
       elsif current_user.profile.sex == 'woman'
-        # ログインしているユーザーが女性の場合は、男性のプロフィールのみを表示
-        @profiles = Profile.where.not(id: current_user.profile.id, sex: 'woman').page(params[:page]).per(50).order("created_at DESC")
+        @profiles = @profiles.where(sex: 'man')
       else
-        # ログインしているユーザーが性別を選択していない場合は全てのプロフィールを表示
-        @profiles = Profile.page(params[:page]).per(50).order("created_at DESC")
-      end
-    else
-      # プロフィールを作成していない場合は、プロフィール作成ページへ飛ばす
       redirect_to new_profile_path
+      end
     end
   end
 
   def show
     @profile = Profile.find(params[:id])
     @icon_url = @profile.icon.present? ? @profile.icon.url : Profile.default_icons.sample
-    @love_match = calculate_love_match(current_user.answer.response, @profile.user.answer.response)
     @favorite = current_user.favorites.find_by(profile_id: @profile.id)
+
+    if current_user.answer.present? && @profile.user.answer.present?
+      @love_match = calculate_love_match(current_user.answer.response, @profile.user.answer.response)
+    else
+      @love_match = nil
+    end
   end
 
   def new
@@ -82,7 +83,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-
   private
 
   #相性診断の％計算
@@ -102,9 +102,8 @@ class ProfilesController < ApplicationController
     score
   end
 
-
   def set_profile
-      @profile = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def profile_params

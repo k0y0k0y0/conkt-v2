@@ -4,6 +4,7 @@
       <th>メッセージ一覧</th>
     </tr>
   </thead>
+
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
@@ -19,7 +20,9 @@
               <div class="user-info">
                 <strong><%= target_user.profile.name %></strong>
                 <div class="last-message">
-                  <%= room.chats.last.message %>
+                  <% if room.chats.last %>
+                    <%= room.chats.last.message %>
+                  <% end %>
                 </div>
               </div>
             </div>

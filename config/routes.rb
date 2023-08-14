@@ -4,9 +4,19 @@ Rails.application.routes.draw do
   get 'relationships/followers'
   get 'pages/index'
   get 'pages/show'
-  devise_for :users
+
+  #ログイン/ゲストログイン
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    post 'users/admin_guest_sign_in', to: 'users/sessions#admin_guest_sign_in'
+  end
+
   resources :profiles
-  root 'profiles#index'
+
+  root 'pages#index'
   resources :rooms, only: [:index, :create]
   resources :chats, only: [:index, :create, :show]
 

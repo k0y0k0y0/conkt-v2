@@ -1,6 +1,14 @@
 class ChatsController < ApplicationController
-  before_action do
-    @room = Room.find(params[:room_id])
+  before_action only: [:index] do
+    if params[:room_id].present?
+      @room = Room.find(params[:room_id])
+    end
+  end
+
+  before_action only: [:create] do
+    if params[:chat][:room_id].present?
+      @room = Room.find(params[:chat][:room_id])
+    end
   end
 
   def index
@@ -29,6 +37,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = @room.chats.build(chat_params)
+    @chat.user_id = current_user.id
     @chats = @room.chats.order(:created_at)
     respond_to do |format|
       if @chat.save
@@ -37,11 +46,6 @@ class ChatsController < ApplicationController
         format.html { redirect_to chats_path(@chat), notice: '投稿できませんでした...' }
       end
     end
-    # if @chat.save
-    #   redirect_to room_chats_path(@room)
-    # else
-    #   render 'index'
-    # end
   end
 
   private

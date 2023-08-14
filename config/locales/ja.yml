@@ -1,6 +1,39 @@
 ---
 ja:
   activerecord:
+      # 全てのモデル記載
+    models:
+      answer: 相性診断の回答
+      chat: DMメッセージ
+      favorite: お気に入り
+      profile: プロフィール
+      question: 相性診断の質問内容
+      relationship: フォロー機能
+      room: DMルーム
+      user: ユーザー
+    attributes:
+      # 各モデルのカラム名を記載
+      answer:
+        response: 回答
+      chat:
+        message: メッセージ
+        read: 既読/未読
+      profile:
+        icon: プロフィール画像
+        name: 名前
+        sex: 性別
+        age: 年齢
+        work: 仕事
+        hobby: 趣味
+        likes: 好きなこと
+        comment: 一言
+      question:
+        content: 質問
+      user:
+        email: メールアドレス
+        password: パスワード
+        admin: 管理者
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
