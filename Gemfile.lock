@@ -318,6 +318,9 @@ DEPENDENCIES
   kaminari
   listen (~> 3.2)
   mini_magick
+  net-imap
+  net-pop
+  net-smtp
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 4.1)
