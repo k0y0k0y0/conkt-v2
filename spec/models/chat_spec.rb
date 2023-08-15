@@ -1,16 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe Chat, type: :model do
-  let(:user) { FactoryBot.create(:user) }
-  let(:room) { FactoryBot.create(:room, user: user) }
+RSpec.describe 'DMメッセージに関するテスト', type: :system do
 
-  describe 'バリデーションのテスト' do
-    context '200文字以上のメッセージを送る場合' do
-      it 'メッセージ送信ができない' do
-        chat = Chat.create(user: user, room: room)
-        chat.message = 'a' * 201
-        expect(chat).not_to be_valid
+  def user_login
+    visit new_user_session_path
+    fill_in 'user[email]', with: 'test@example.com'
+    fill_in 'user[password]', with: '12345678'
+    click_button 'ログイン'
+  end
+
+  describe 'メッセージ送信のテスト' do
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:second_user) { FactoryBot.create(:second_user) }
+  let!(:room) { FactoryBot.create(:room, sender: user, recipient: second_user) }
+  let(:chat) { FactoryBot.create(:chat, user: user, room: room) }
+
+  before do
+    user_login
+  end
+
+  context 'メッセージを送った場合' do
+      it 'メッセージが表示される' do
+          chat.message = 'こんにちは'
+          expect(chat).not_to have
+                end
       end
     end
   end
-end

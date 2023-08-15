@@ -20,4 +20,15 @@ FactoryBot.define do
     likes { '寝ること' }
     comment { 'よろしく！' }
   end
+
+  factory :third_profile, class: Profile do
+    name { 'test3' }
+    icon { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg'))}
+    sex { 'woman' }
+    age { '20' }
+    work { '看護師' }
+    hobby { '料理' }
+    likes { '走ること' }
+    comment { 'よろしくお願いします' }
+  end
 end

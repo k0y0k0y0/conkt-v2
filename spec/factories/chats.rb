@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :chat do
     message { "Sample message" }
-    association :room
-    association :user
+    room {:room}
+    user {:user}
     read { false }
   end
 end
