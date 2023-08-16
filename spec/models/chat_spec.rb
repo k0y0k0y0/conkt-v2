@@ -23,7 +23,7 @@ RSpec.describe 'DMメッセージに関するテスト', type: :system do
       it 'メッセージが表示される' do
           chat.message = 'こんにちは'
           expect(chat).not_to have
-                end
+        end
       end
     end
   end

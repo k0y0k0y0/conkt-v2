@@ -32,7 +32,7 @@ end
   profile = Profile.create!(
     icon: File.open("app/assets/images/default_icon1.jpg"),
     name: Faker::Name.name,
-    sex: ["man", "woman"].sample,
+    sex: ["男性", "女性"].sample,
     age: Faker::Number.between(from: 18, to: 80),
     work: Faker::Job.title,
     hobby: Faker::Hobby.activity,

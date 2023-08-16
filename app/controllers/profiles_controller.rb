@@ -6,10 +6,10 @@ class ProfilesController < ApplicationController
     if current_user && current_user.profile
       @profiles = Profile.where.not(user_id: current_user.id)
 
-      if current_user.profile.sex == 'man'
-        @profiles = @profiles.where(sex: 'woman')
-      elsif current_user.profile.sex == 'woman'
-        @profiles = @profiles.where(sex: 'man')
+      if current_user.profile.sex == '男性'
+        @profiles = @profiles.where(sex: '女性')
+      elsif current_user.profile.sex == '女性'
+        @profiles = @profiles.where(sex: '男性')
       else
       redirect_to new_profile_path
       end
@@ -53,7 +53,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to new_answer_path(current_user), notice: "プロフィールを登録しました！" }
+        format.html { redirect_to new_answer_path, notice: "プロフィールを登録しました！" }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new, status: :unprocessable_entity }

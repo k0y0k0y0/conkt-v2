@@ -7,7 +7,7 @@ class Users::SessionsController < Devise::SessionsController
     profile.assign_attributes(
       icon: File.new(Rails.root.join('app', 'assets', 'images', 'guest.png')),
       name: 'ゲスト',
-      sex: 'man',
+      sex: '男性',
       age: 100,
       work: 'ゲストの職業',
       hobby: 'ゲストの趣味',
