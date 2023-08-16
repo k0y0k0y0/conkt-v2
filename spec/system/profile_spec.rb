@@ -23,7 +23,7 @@ RSpec.describe 'プロフィールに関するテスト', type: :system do
       it 'プロフィールが登録できる' do
         visit new_profile_path
         fill_in 'profile[name]', with: 'taro'
-        choose 'profile[sex]', with: 'man'
+        choose 'profile[sex]', with: '男性'
         fill_in 'profile[age]', with: '30'
         fill_in 'profile[work]', with: '会社員'
         fill_in 'profile[hobby]', with: '釣り'
@@ -48,7 +48,7 @@ RSpec.describe 'プロフィールに関するテスト', type: :system do
         user_login
         click_on '編集'
         fill_in 'profile[name]', with: 'taro edited'
-        choose 'profile[sex]', with: 'man'
+        choose 'profile[sex]', with: '男性'
         fill_in 'profile[age]', with: '31'
         fill_in 'profile[work]', with: 'フリーランス'
         fill_in 'profile[hobby]', with: '旅行'
@@ -56,7 +56,7 @@ RSpec.describe 'プロフィールに関するテスト', type: :system do
         fill_in 'profile[comment]', with: 'よろしくお願いします'
         attach_file 'profile[icon]', File.join(Rails.root, 'spec/fixtures/test.jpg')
         click_on '更新'
-        expect(page).to have_content 'man'
+        expect(page).to have_content '男性'
         expect(page).to have_content '31'
         expect(page).to have_content 'フリーランス'
         expect(page).to have_content '旅行'
