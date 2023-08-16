@@ -24,11 +24,11 @@
         <% end %>
 
         <% if user_signed_in? %>
-          <%= link_to "参加者一覧", profiles_path %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <%= link_to "マイページ", pages_show_path %>
-          <%= link_to "メッセージ一覧", rooms_path %>
+          <%= link_to "参加者一覧", profiles_path %>
           <%= link_to "気になる一覧", favorites_path %>
+          <%= link_to "メッセージ一覧", rooms_path %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
           <%= link_to "ログイン", new_user_session_path %>

@@ -7,11 +7,12 @@
 * gem devise
 * 1対1のメッセージ機能
 * フォロー機能
+* お気に入り機能
+* メッセージ機能
 ## カリキュラム外の技術
-* Natural Languadge
+* ChatGPT API
 * gem rails_admin
 * gem cancancan
-* gem ransack
 ## 実行手順
 ```
 $ git clone git@github.com:Uchiborii/CONKT.git
@@ -27,7 +28,7 @@ https://docs.google.com/spreadsheets/d/1hzKy_m9XlAHrNo-fmcSKu1MItFOqVcAUTCDqECsP
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/1hzKy_m9XlAHrNo-fmcSKu1MItFOqVcAUTCDqECsPcnM/edit#gid=2020033787
 ## ワイヤーフレーム
-https://www.figma.com/file/PJ0pX5xCeXPlS7QdCA9I0G/Untitled?type=design&node-id=1%3A2&mode=design&t=A62iMYfZAlTIMcto-1
+https://www.figma.com/file/PJ0pX5xCeXPlS7QdCA9I0G/Untitled?type=design&node-id=1%3A2&mode=design&t=wKpaE8JnLBce6yFd-1
 ## ER図
 ![ER図](images/ER.png)
 ## 画面遷移図
