@@ -31,7 +31,7 @@ body {
 header {
   background-color: #5B503E; /* ヘッダーの背景色 */
   color: white;
-  padding: 15px 0;
+  padding: 0px 0;
   width: 100%; /* 横幅を100%に設定 */
   text-align: center; /* テキストを中央寄せに */
 }
@@ -51,7 +51,7 @@ header {
 }
 
 .logo {
-  height: 50px;
+  height: 100px;
 }
 
 .nav-right {
