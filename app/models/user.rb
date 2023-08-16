@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :email,  length: { maximum: 50 }
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
 
   # フォローをした、されたの関係
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -15,13 +15,10 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
   #相性診断
-  has_many :questions
-  has_one :answer
+  has_one :answer, dependent: :destroy
 
   #DM機能
-  has_many :user_rooms
-  has_many :chats
-  has_many :rooms, through: :user_rooms
+  has_many :chats, dependent: :destroy
 
   #お気に入り機能
   has_many :favorites, dependent: :destroy

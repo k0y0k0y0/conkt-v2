@@ -21,12 +21,11 @@
       <tr>
         <th>名前</th>
         <th>性別</th>
-        <th>Age</th>
-        <th>Work</th>
-        <th>Hobby</th>
-        <th>Likes</th>
-
-        <th>Comment</th>
+        <th>年齢</th>
+        <th>仕事</th>
+        <th>趣味</th>
+        <th>好きなこと</th>
+        <th>一言</th>
       </tr>
     </thead>
 
@@ -51,18 +50,16 @@
     </tbody>
   </table>
 
-
-<br>
-<%= link_to 'Back', profiles_path %> |
-<br>
-
 <% if current_user.following?(@profile.user) %>
-  <%= link_to "フォロー外す", user_relationships_path(@profile.user.id), method: :delete %>
+  <%= link_to "フォローを外す", user_relationships_path(@profile.user.id), method: :delete %>
 <% else %>
   <%= link_to "フォローする", user_relationships_path(@profile.user.id), method: :post %>
 <% end %>
 
 <% if current_user.following?(@profile.user) && @profile.user.following?(current_user) %>
-  <%= link_to 'DMを始める', rooms_path(sender_id: current_user.id, recipient_id: @profile.user.id), method: :post, class: "ml-3" %>
+  <%= link_to 'DMをする', rooms_path(sender_id: current_user.id, recipient_id: @profile.user.id), method: :post, class: "ml-3" %>
 <% end %>
 
+<br>
+<%= link_to '戻る', profiles_path %>
+<br>

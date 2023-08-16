@@ -21,6 +21,7 @@ gem 'dotenv'
 gem 'cancancan'
 gem 'rails_admin'
 gem 'rails-i18n'
+gem 'devise-i18n'
 gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
@@ -44,8 +45,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem "selenium-webdriver"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

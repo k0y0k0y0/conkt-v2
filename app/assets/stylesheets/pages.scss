@@ -58,8 +58,25 @@ body {
   margin-top: 20px;
 }
 
-.my-icon .icon-image {
-  width: 50px;
-  height: 50px;
+.my-icon img {
+  width: 100px;
 }
 
+/* テーブルを中央寄せに */
+table {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+th, td {
+  padding: 8px;
+}
+
+/* 編集と戻るリンクを中央寄せに */
+.my-icon a, .my-icon a + a {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 80px;
+}

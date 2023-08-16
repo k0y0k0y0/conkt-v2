@@ -2,12 +2,12 @@ class Users::SessionsController < Devise::SessionsController
   def guest_sign_in
     user = User.guest
     sign_in user
-    # ゲストユーザーのプロフィール情報作成もしくは更新
+    # ゲストユーザーのプロフィール情報作成
     profile = user.profile || user.build_profile
     profile.assign_attributes(
       icon: File.new(Rails.root.join('app', 'assets', 'images', 'guest.png')),
       name: 'ゲスト',
-      sex: 'man',
+      sex: '男性',
       age: 100,
       work: 'ゲストの職業',
       hobby: 'ゲストの趣味',
@@ -22,7 +22,6 @@ class Users::SessionsController < Devise::SessionsController
       response: [true] * 15
     )
     answer.save
-
     redirect_to pages_index_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 

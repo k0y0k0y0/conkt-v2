@@ -4,11 +4,11 @@
   <% @questions.each_with_index do |question, index| %>
     <div class="question">
       <p><%= question.content %></p>
-      <%= f.radio_button :response, true, name: "answers[#{index}][response]" %>
+      <%= f.radio_button :response, true, name: "answers[#{index}][response]", id: "answer_#{index}_response_true" %>
       <%= f.label :response, 'はい' %>
-      <%= f.radio_button :response, false, name: "answers[#{index}][response]" %>
+      <%= f.radio_button :response, false, name: "answers[#{index}][response]", id: "answer_#{index}_response_false" %>
       <%= f.label :response, 'いいえ' %>
     </div>
   <% end %>
-  <%= f.submit '回答する' %>
+  <%= f.submit '登録' %>
 <% end %>

@@ -6,8 +6,14 @@
           <div class="content">
             <div class="user-row">
               <div class="user-icon">
-                <%= link_to profile_path(chat.user.profile) do %>
-                  <%= image_tag chat.user.profile.icon.url, alt: "#{chat.user.profile.name}のアイコン", class: "profile-icon" %>
+                <% if chat.user == current_user %>
+                  <%= link_to pages_show_path, class: "no-underline" do %>
+                    <%= image_tag chat.user.profile.icon.url, alt: "#{chat.user.profile.name}のアイコン", class: "profile-icon" %>
+                  <% end %>
+                  <% else %>
+                    <%= link_to profile_path(chat.user.profile) do %>
+                    <%= image_tag chat.user.profile.icon.url, alt: "#{chat.user.profile.name}のアイコン", class: "profile-icon" %>
+                  <% end %>
                 <% end %>
               </div>
               <div class="user-info">
@@ -33,7 +39,7 @@
 </div>
 
 <%= form_with model: @chat, data: { remote: true } do |f| %>
-  <%= f.text_field :message %>
+  <%= f.text_field :message, placeholder: "メッセージを入力" %>
   <%= f.hidden_field :room_id, value: @room.id %>
   <%= f.submit "送信" %>
 <% end %>

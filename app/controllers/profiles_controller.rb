@@ -6,10 +6,10 @@ class ProfilesController < ApplicationController
     if current_user && current_user.profile
       @profiles = Profile.where.not(user_id: current_user.id)
 
-      if current_user.profile.sex == 'man'
-        @profiles = @profiles.where(sex: 'woman')
-      elsif current_user.profile.sex == 'woman'
-        @profiles = @profiles.where(sex: 'man')
+      if current_user.profile.sex == '男性'
+        @profiles = @profiles.where(sex: '女性')
+      elsif current_user.profile.sex == '女性'
+        @profiles = @profiles.where(sex: '男性')
       else
       redirect_to new_profile_path
       end
@@ -53,7 +53,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to new_answer_path(current_user), notice: "Profile was successfully created." }
+        format.html { redirect_to new_answer_path, notice: "プロフィールを登録しました！" }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,7 +65,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to pages_show_path(current_user), notice: "Profile was successfully updated." }
+        format.html { redirect_to pages_show_path(current_user), notice: "プロフィールを更新しました！" }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -88,8 +88,8 @@ class ProfilesController < ApplicationController
   #相性診断の％計算
   def calculate_love_match(user1, user2)
     score = calculate_score(user1, user2)
-    min_percentage = 40
-    percentage_increase_per_point = 4
+    min_percentage = 25
+    percentage_increase_per_point = 5
     min_percentage + (score * percentage_increase_per_point)
   end
 

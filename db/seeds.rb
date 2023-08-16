@@ -32,12 +32,20 @@ end
   profile = Profile.create!(
     icon: File.open("app/assets/images/default_icon1.jpg"),
     name: Faker::Name.name,
-    sex: ["man", "woman"].sample,
+    sex: ["男性", "女性"].sample,
     age: Faker::Number.between(from: 18, to: 80),
-    work: Faker::Job.title,
-    hobby: Faker::Hobby.activity,
-    likes: Faker::Lorem.words(number: rand(1..5)).join(', '),
+    work: Faker::Lorem.words(number: rand(1..2)).join(', '),
+    hobby: Faker::Lorem.words(number: rand(1..2)).join(', '),
+    likes: Faker::Lorem.words(number: rand(1..2)).join(', '),
     comment: Faker::Lorem.sentence,
+    user_id: n+1
+  )
+end
+
+# 相性診断回答データの投入
+5.times do |n|
+  answer = Answer.create!(
+    response: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
     user_id: n+1
   )
 end

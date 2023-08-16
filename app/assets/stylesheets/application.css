@@ -51,7 +51,6 @@ header {
 }
 
 .logo {
-  width: 50px; /* 調整可能なサイズ */
   height: 50px;
 }
 
@@ -74,13 +73,13 @@ header {
 }
 
 .alert-notice {
-  background-color: #ffe6f0; /* 薄いピンクのアラート */
-  color: #ca1f47;
+  background-color: #cae0eb; /* 薄いピンクのアラート */
+  color: #386074;
 }
 
 .alert-error {
-  background-color: #f9c4d2; /* 薄いピンクのアラート */
-  color: #ca1f47;
+  background-color: #cae0eb; /* 薄いピンクのアラート */
+  color: #386074;
 }
 
 /* Style the main content */
