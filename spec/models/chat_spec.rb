@@ -9,7 +9,7 @@ RSpec.describe 'DMメッセージに関するテスト', type: :system do
     click_button 'ログイン'
   end
 
-  describe 'メッセージ送信のテスト' do
+  describe 'メッセージ送信のバリデーションテスト' do
   let!(:user) { FactoryBot.create(:user) }
   let!(:second_user) { FactoryBot.create(:second_user) }
   let!(:room) { FactoryBot.create(:room, sender: user, recipient: second_user) }
@@ -19,10 +19,10 @@ RSpec.describe 'DMメッセージに関するテスト', type: :system do
     user_login
   end
 
-  context 'メッセージを送った場合' do
-      it 'メッセージが表示される' do
-          chat.message = 'こんにちは'
-          expect(chat).not_to have
+  context '201文字以上のメッセージを送った場合' do
+      it 'メッセージが送信できない' do
+          chat.message = 'message' * 201
+          expect(chat).not_to be_valid
         end
       end
     end

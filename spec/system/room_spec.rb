@@ -21,7 +21,7 @@ RSpec.describe 'DM一覧に関するテスト', type: :system do
       user_login
     end
     context 'メッセージ一覧画面をクリックすると' do
-      it 'やり取りしている人一覧が表示される' do
+      it 'やり取りしている人一覧ページが表示される' do
         click_on 'メッセージ一覧'
         expect(page).to have_content 'メッセージ一覧'
       end

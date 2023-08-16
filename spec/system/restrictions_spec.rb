@@ -46,7 +46,7 @@ RSpec.describe 'アクセス制限に関するテスト', type: :system do
         admin_user_login
         click_link '参加者一覧'
         click_link 'test1'
-        expect(page).to have_content 'man'
+        expect(page).to have_content '男性'
       end
     end
   end
