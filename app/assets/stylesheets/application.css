@@ -30,7 +30,6 @@ body {
 header {
   color: rgb(255, 255, 255);
   width: 100%; /* 横幅を100%に設定 */
-  text-align: center; /* テキストを中央寄せに */
 }
 
 .nav {
@@ -40,6 +39,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between; /* 左右に要素を配置 */
+  height: 100px;
 }
 
 .nav-left {
@@ -48,7 +48,8 @@ header {
 }
 
 .logo {
-  height: 130px;
+  height: 150px;
+  margin-top: 40px;
 }
 
 .nav-right {
