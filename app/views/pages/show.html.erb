@@ -1,36 +1,56 @@
-<h1><%= current_user.profile.name %>さんのマイページです</h1>
+<div class="container">
+  <h1><%= current_user.profile.name %>さんのマイページです</h1>
 
   <div class="my-icon">
     <%= image_tag @profile.icon.url %>
   </div>
 
-  <table>
-    <thead>
+  <div class="button_line004">
+    <%= link_to 'AIにニックネームをつけてもらう', chatbots_path(@profile), class: 'btn btn-primary' %>
+  </div>
+
+  <div class="image-chatrobot">
+    <a href="<%= chatbots_path(@profile) %>">
+      <img src="<%= asset_path('chatbot.png') %>" alt="ロボット画像">
+    </a>
+  </div>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>名前</th>
+      <td><%= @profile.name %></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><%= @profile.sex %></td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td><%= @profile.age %>歳</td>
+    </tr>
+    <tr>
+      <th>Work</th>
+      <td><%= @profile.work %></td>
+    </tr>
+    <tr>
+      <th>Hobby</th>
+      <td><%= @profile.hobby %></td>
+    </tr>
+    <tr>
+      <th>Likes</th>
+      <td><%= @profile.likes %></td>
+    </tr>
+    <tr>
+      <th>Comment</th>
+      <td><%= @profile.comment %></td>
+    </tr>
+<tfoot>
       <tr>
-        <th>名前</th>
-        <th>性別</th>
-        <th>Age</th>
-        <th>Work</th>
-        <th>Hobby</th>
-        <th>Likes</th>
-        <th>Comment</th>
+        <td colspan="2" class="button-cell">
+          <%= link_to '編集', edit_profile_path(@profile), class: 'btn btn-primary' %> |
+          <%= link_to '戻る', root_path, class: 'btn btn-secondary' %>
+        </td>
       </tr>
-    </thead>
-
-
-    <tbody>
-          <tr>
-            <td><%= @profile.name %></td>
-            <td><%= @profile.sex %></td>
-            <td><%= @profile.age %>歳</td>
-            <td><%= @profile.work %></td>
-            <td><%= @profile.hobby %></td>
-            <td><%= @profile.likes %></td>
-            <td><%= @profile.comment %></td>
-            <td><%= link_to '編集', edit_profile_path(@profile) %></td>
-            <td><%= link_to '戻る', root_path %></td>
-          </tr>
-    </tbody>
+    </tfoot>
   </table>
-
-<%= link_to 'AIにニックネームをつけてもらう', chatbots_path(@profile) %>
+</div>
