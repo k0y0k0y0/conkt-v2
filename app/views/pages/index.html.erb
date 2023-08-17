@@ -4,24 +4,76 @@
       <title>CONKT - トップページ</title>
     </head>
 
-    <body>
-      <div class="container">
-        <h1>CONKTへようこそ</h1>
+    <body id="page-a">
+      <main>
+        <div class="container">
+          <div class="keymsgs">
+            <div><span class="keymsg">縁が結ぶ</span></div>
+            <div><span class="keymsg">つながりの始まり</span></div>
+          </div>
+          <div class="container">
+            <div class="image-group">
+              <div class="image-container">
+                <a href="<%= profiles_path %>">
+                  <img src="<%= asset_path('heart.png') %>" alt="ハート画像">
+                  <div class="image-comment">-相性診断-
+                                              相性の良い相手を
+                                              事前に知ることができます
+                  </div>
+                </a>
+              </div>
 
-        <p>「CONKT」</p>
-        <p>コネクトは、繋ぐという意味</p>
-        <p>人々がお互いに繋がり、コミュニケーションを促進するプラットフォーム</p>
-        <p>コミュニケーションや出会いを促進するアプリとして、多くの人々にとって魅力的な存在へ</p>
+              <div class="image-container">
+                <a href="<%= profiles_path %>">
+                  <img src="<%= asset_path('profile.png') %>" alt="プロフィール画像">
+                  <div class="image-comment">-プロフィール-
+                                              趣味・仕事・好きなことなどを知れます
+                                              気になるボタン・メモ機能有り
+                  </div>
+                </a>
+              </div>
 
-        <hr>
+              <div class="image-container">
+                <a href="<%= rooms_path %>">
+                  <img src="<%= asset_path('mail.png') %>" alt="DM画像">
+                  <div class="image-comment">-DM-
+                                              イベント終了後DM機能が解放
+                                              相互フォローでDMができます
+                  </div>
+                </a>
+              </div>
 
-        <p>CO=communication (コミュニケーション)</p>
-        <p>N=New Beginnings (新たな始まり)</p>
-        <p>KT=Kickstart (スタートを切る)</p>
+              <div class="image-container">
+                <a href="<%= pages_show_path %>">
+                  <img src="<%= asset_path('robot.png') %>" alt="chatCPT">
+                  <div class="image-comment">-AIニックネーム命名-
+                                              あなたのニックネームを
+                                              AIがご提案します
+                  </div>
+                </a>
+              </div>
 
-        <hr>
+                            <div class="image-container">
+                <a href="<%= favorites_path %>">
+                  <img src="<%= asset_path('favorite.png') %>" alt="お気に入り">
+                  <div class="image-comment">-気になるボタン-
+                                              気になる人をチェック
+                                              一覧表で見ることができます
+                  </div>
+                </a>
+              </div>
 
-        <p>CONKTが新たな出会いや関係をスタートさせる場として、新たな始まりのきっかけになりますように</p>
-      </div>
+            </div>
+          </div>
+
+          <div class="button_solid015">
+            <% if user_signed_in? %>
+            <% else %>
+              <p>START</p>
+              <a href="<%= new_user_registration_path %>">新規登録</a>
+            <% end %>
+          </div>
+        </div>
+      </main>
     </body>
   </html>

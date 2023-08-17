@@ -3,12 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 /* Set base font */
-body {
+#page-a {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7; /* 淡いグレーの背景色 */
+  /*background-color: #f7f7f7; /* 淡いグレーの背景色 */
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* 画面の最小高さをビューポートの高さと一致させる */
@@ -16,40 +17,21 @@ body {
   justify-content: center; /* コンテンツを縦方向にも中央に配置 */
   width: 100%;
   color: #332105;
+
+  background-image: url('love.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  position: relative;
 }
 
-.content {
-  flex: 1; /* コンテンツが残りのスペースを占有 */
-  width: 100%;
-  background-color: transparent; /* 背景色を透明にする */
-  text-align: center; /* テキストを中央寄せに */
-}
+.keymsg {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 3.0rem;
+  font-weight: 500;
+  padding: 0.3em 0.6em;
+  background-color: #FCFCFA;
 
-.container {
-  max-width: 100%; /* 横幅を画面幅いっぱいに設定 */
-  margin: 0; /* 余白をなくす */
-  background-color: transparent; /* 背景色を透明にする */
-  border: none; /* ボーダーを削除 */
-  box-shadow: none; /* 影を削除 */
-}
-
-.icon-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.icon-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
-
-.profile-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
 }
 
 /* マイページ */
@@ -73,10 +55,107 @@ th, td {
   padding: 8px;
 }
 
-/* 編集と戻るリンクを中央寄せに */
-.my-icon a, .my-icon a + a {
-  margin: 0 auto;
-  display: block;
+/*新規登録簿ボタン */
+.button_solid015 {
   text-align: center;
-  width: 80px;
+  margin-top: -15px; /* ボタンを下に移動 */
+}
+
+.button_solid015 p {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.04rem;
+  display: inline-block;
+  position: relative;
+}
+
+.button_solid015 p:before, .button_solid015 p:after {
+  display: inline-block;
+  position: absolute;
+  top: 45%;
+  width: 20px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: white;
+  content: "";
+}
+
+.button_solid015 p:before {
+  left: -30px;
+  -webkit-transform: rotate(50deg);
+  transform: rotate(50deg);
+}
+
+.button_solid015 p:after {
+  right: -30px;
+  -webkit-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+}
+
+.button_solid015 a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: black;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  background: white;
+  border-radius: 50px;
+  text-decoration: none; /* アンダーラインを非表示にする */
+}
+
+.button_solid015 a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.button_solid015 a:after {
+  display: none; /* ✖︎（アイコン）を非表示にする */
+}
+
+/*機能紹介*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 25px; /* 要素全体を右に20px移動 */
+}
+
+.image-group {
+  display: flex;
+  gap: 20px; /* 画像コンテナ間の間隔を調整 */
+  justify-content: center; /* 画像グループを中心に配置 */
+  align-items: center; /* 画像グループを縦方向に中心に配置 */
+}
+
+.image-container {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+
+.image-container img {
+  width: 60px; /* 画像の幅を調整 */
+  height: 60px; /* 画像の高さを調整 */
+}
+
+.image-comment {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background-color: transparent;
+  color: white;
+  padding: 8px;
+  box-sizing: border-box;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
 }
