@@ -29,16 +29,17 @@ class ChatsController < ApplicationController
     end
     @chats = @chats.order(:created_at)
     @chat = @room.chats.build
-
-  end
-
-  def show
   end
 
   def create
     @chat = @room.chats.build(chat_params)
     @chat.user_id = current_user.id
     @chats = @room.chats.order(:created_at)
+    if @chat.message.blank?
+      flash.now[:alert] = "メッセージを入力してください"
+      render :index
+      return
+    end
     respond_to do |format|
       if @chat.save
         format.js { render :index }

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   resources :rooms, only: [:index, :create]
-  resources :chats, only: [:index, :create, :show]
+  resources :chats, only: [:index, :create]
 
   resources :chatbots, only: [:index]
   resources :answers, only: [:new, :create]

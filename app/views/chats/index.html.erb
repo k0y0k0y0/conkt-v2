@@ -44,6 +44,12 @@
   <%= f.submit "送信" %>
 <% end %>
 
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
 <script>
 function clearTextField() {
   document.querySelector('form input[type="text"]').value = '';
