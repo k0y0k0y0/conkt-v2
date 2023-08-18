@@ -6,6 +6,14 @@
   font-family: 'Bricolage Grotesque', sans-serif;
 }
 
+@media (max-width: 767px) {
+  /* トップページの背景画像のサイズを調整 */
+  #page-a {
+    background-size: contain; /* 画像が収まるように調整 */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効化 */
+  }
+}
+
 /* Set base font */
 #page-a {
   font-family: Arial, sans-serif;

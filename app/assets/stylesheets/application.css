@@ -105,12 +105,11 @@ main {
 
 footer {
   background-color: transparent; /* フッターの背景色 */
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 15px 0; /* ヘッダーと同じ高さに設定 */
   text-align: right;
   width: 100%; /* フッターを画面幅いっぱいに */
   box-sizing: border-box; /* パディングを含めたボックスサイズ */
-  position: fixed; /* 固定位置に配置 */
   bottom: 0; /* 下端に配置 */
 
 }

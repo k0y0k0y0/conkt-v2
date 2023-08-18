@@ -24,43 +24,43 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "山田 太郎" %>
   </div>
 
   <div class="sex-field">
     <%= form.label :sex, "性別" %>
-    <%= form.label :男性 %>
     <%= form.radio_button :sex, :男性 %>
-    <%= form.label :女性 %>
+    <span class="radio-label">男性</span> <!-- ここに変更を加える -->
     <%= form.radio_button :sex, :女性 %>
+    <span class="radio-label">女性</span>
   </div>
 
   <div class="field">
     <%= form.label :age %>
-    <%= form.text_field :age %>
+    <%= form.text_field :age, placeholder: "35" %>
   </div>
 
   <div class="field">
     <%= form.label :work %>
-    <%= form.text_field :work %>
+    <%= form.text_field :work, placeholder: "会社員" %>
   </div>
 
   <div class="field">
     <%= form.label :hobby %>
-    <%= form.text_field :hobby %>
+    <%= form.text_field :hobby, placeholder: "料理" %>
   </div>
 
   <div class="field">
     <%= form.label :likes %>
-    <%= form.text_field :likes %>
+    <%= form.text_field :likes, placeholder: "食べること" %>
   </div>
 
   <div class="field">
     <%= form.label :comment %>
-    <%= form.text_field :comment %>
+    <%= form.text_field :comment, placeholder: "宜しくお願いします！" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "登録", class: "submit-button" %>
   </div>
 <% end %>

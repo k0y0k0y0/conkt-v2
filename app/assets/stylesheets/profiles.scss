@@ -52,6 +52,7 @@
   .profile-table {
     margin: 0 auto;
   }
+
 /*詳細ページ*/
 .profile-details {
   text-align: center;
@@ -90,3 +91,23 @@
   text-decoration: none;
   cursor: pointer;
 }
+/*プロフィール新規作成のラジオボタン*/
+.sex-field label {
+  margin-right: 10px; /* ラベルの右側の余白を調整 */
+  margin-left: auto; /* ラベルを左寄せにする */
+}
+
+.sex-field input[type="radio"] {
+  margin-left: 5px; /* ラジオボタンの左側の余白を調整 */
+}
+.submit-button {
+  background-color: rgb(235, 222, 185); /* 黒色に変更 */
+  color: rgb(52, 37, 37); /* テキスト色を白に設定 */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
