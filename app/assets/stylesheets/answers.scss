@@ -1,3 +1,68 @@
-// Place all the styles related to the Answers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* 余白を登録ボタンの下に追加 */
+.submit-button {
+  margin-bottom: 100px;
+}
+
+/* チェックボックスとラジオボタンの青い背景を無効に */
+input[type="radio"],
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #594f3d; /* 茶色のボーダーカラー */
+  border-radius: 50%; /* 円形にする */
+  width: 20px; /* 幅を調整 */
+  height: 20px; /* 高さを調整 */
+  margin-right: 8px; /* マージンを調整 */
+  margin-left: 100px;
+  margin-bottom: -5px; /* ラジオボタンを少し下にずらす */
+}
+
+/* チェックボックスとラジオボタンがチェックされた時のスタイル */
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background-color: #594f3d; /* チェックされた時の背景色 */
+}
+
+/* 質問のスタイル */
+.question {
+  border-bottom: 1px solid #ccc; /* 質問ごとに下線を追加 */
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: center; /* 質問を中央寄せ */
+}
+
+.question-text {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 質問テキストも中央寄せ */
+}
+
+.question-number {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+/* ボタンのスタイル（必要に応じて調整） */
+.submit-button {
+  background-color: #594f3d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #594f3d;
+}
+
+.section-heading {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 3px 35px;
+  display: inline-block; /* 横幅をコンテンツに合わせるため */
+  margin: 10px;
+  margin-left: 100px;
+}

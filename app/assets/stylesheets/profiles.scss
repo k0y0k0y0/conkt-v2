@@ -1,0 +1,113 @@
+/*参加者一覧ページ*/
+.participants-row {
+  display: flex;
+
+  margin: 0 auto;
+  gap: 60px; /* アイコン同士の間隔を調整 */
+  max-width: 1200px; /* 最大幅を設定 */
+}
+
+.profile-icon {
+  max-width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.profile-name-top {
+  font-size: 12px;
+  margin-top: -5px;
+  color: black;
+}
+
+/* メディアクエリ：画面幅が1200px未満の場合にスタイルを調整 */
+@media (max-width: 1200px) {
+  .participants-row {
+    flex-wrap: wrap; /* アイコンを折り返し表示 */
+    justify-content: center; /* ブロックを中央寄せ */
+  }
+}
+
+/* プロフィール詳細ページ */
+.table {
+  margin: 0 auto;
+}
+
+.profile-details {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .mypage-icon {
+    max-width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  .profile-table {
+    margin: 0 auto;
+  }
+
+/*詳細ページ*/
+.profile-details {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.profile-icon img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.love-match {
+  font-size: 24px;
+  color: #d74a30;
+}
+
+.back-button {
+  background-color: rgb(235, 222, 185); /* 黒色に変更 */
+  color: rgb(52, 37, 37); /* テキスト色を白に設定 */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*プロフィール新規作成のラジオボタン*/
+.sex-field label {
+  margin-right: 10px; /* ラベルの右側の余白を調整 */
+  margin-left: auto; /* ラベルを左寄せにする */
+}
+
+.sex-field input[type="radio"] {
+  margin-left: 5px; /* ラジオボタンの左側の余白を調整 */
+}
+.submit-button {
+  background-color: rgb(235, 222, 185); /* 黒色に変更 */
+  color: rgb(52, 37, 37); /* テキスト色を白に設定 */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+

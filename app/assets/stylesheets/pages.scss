@@ -6,10 +6,17 @@
   font-family: 'Bricolage Grotesque', sans-serif;
 }
 
+@media (max-width: 767px) {
+  /* トップページの背景画像のサイズを調整 */
+  #page-a {
+    background-size: contain; /* 画像が収まるように調整 */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効化 */
+  }
+}
+
 /* Set base font */
 #page-a {
   font-family: Arial, sans-serif;
-  /*background-color: #f7f7f7; /* 淡いグレーの背景色 */
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* 画面の最小高さをビューポートの高さと一致させる */
@@ -148,16 +155,16 @@ a {
   width: 100px;
 }
 
-/*AIニックネームロボット*/
+/* AIニックネームロボット */
 .image-chatrobot {
   position: absolute;
-  top: 300px; /* 上端からの距離を0に設定 */
-  right: 460px; /* 右端からの距離を0に設定 */
+  top: 38%; /* 上端からの距離を調整 */
+  right: 30%; /* 右端からの距離を調整 */
 }
 
 /* 画像のサイズを調整 */
 .image-chatrobot img {
-  width: 80px; /* 画像の幅を設定 */
+  max-width: 80px; /* 画像の最大幅を設定 */
   height: auto; /* 高さを自動調整 */
 }
 
@@ -179,8 +186,8 @@ a {
   transition: 0.3s ease-in-out;
   font-weight: 600;
   position: absolute; /* 要素を絶対位置で配置 */
-  top: 250px; /* 上端からの距離を0に設定 */
-  right: 300px; /* 右端からの距離を0に設定 */
+  top: 30%; /* 上端からの距離を調整 */
+  right: 20%;
 }
 
 .button_line004 a:before,
@@ -225,4 +232,20 @@ border-color: #6bb6ff;
 .table-bordered td {
   border-bottom: 1px solid #ddd; /* 線のスタイルを設定 */
   padding: 8px; /* セル内の余白を調整 */
+}
+/*編集/戻るボタン*/
+.edit-botton {
+  background-color: rgb(235, 222, 185); /* 黒色に変更 */
+  color: rgb(52, 37, 37); /* テキスト色を白に設定 */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ホバーエフェクト */
+.btn:hover {
+  opacity: 0.8; /* ホバーエフェクト時の透明度を下げて少し暗くする */
 }
