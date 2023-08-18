@@ -1,2 +1,10 @@
 $('.message').append("<p style='text-align: right;'><%= @chat.message %></p>");
 $('input[type=text]').val("")
+
+<% if @chat.persisted? %>
+  $("#chat-form input[type='text']").val("");
+  var newChat = $("<%= j render(@chat) %>");
+  $(".chats_area").append(newChat);
+<% else %>
+
+<% end %>

@@ -1,14 +1,21 @@
-<h2>相性診断</h2>
+<div class="section-heading">
+  <h2>相性診断</h2>
+</div>
 
 <%= form_for @answer do |f| %>
   <% @questions.each_with_index do |question, index| %>
     <div class="question">
-      <p><%= question.content %></p>
-      <%= f.radio_button :response, true, name: "answers[#{index}][response]", id: "answer_#{index}_response_true" %>
-      <%= f.label :response, 'はい' %>
-      <%= f.radio_button :response, false, name: "answers[#{index}][response]", id: "answer_#{index}_response_false" %>
-      <%= f.label :response, 'いいえ' %>
+      <p class="question-text">
+        <span class="question-number">Q<%= index + 1 %></span>
+        <%= question.content %>
+      </p>
+      <div class="radio-options">
+        <%= f.radio_button :response, true, name: "answers[#{index}][response]", id: "answer_#{index}_response_true" %>
+        <%= f.label :response, 'はい' %>
+        <%= f.radio_button :response, false, name: "answers[#{index}][response]", id: "answer_#{index}_response_false" %>
+        <%= f.label :response, 'いいえ' %>
+      </div>
     </div>
   <% end %>
-  <%= f.submit '登録' %>
+  <%= f.submit '登録', class: 'submit-button' %>
 <% end %>

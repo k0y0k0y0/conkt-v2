@@ -25,30 +25,29 @@
       <td><%= @profile.sex %></td>
     </tr>
     <tr>
-      <th>Age</th>
+      <th>年齢</th>
       <td><%= @profile.age %>歳</td>
     </tr>
     <tr>
-      <th>Work</th>
+      <th>仕事</th>
       <td><%= @profile.work %></td>
     </tr>
     <tr>
-      <th>Hobby</th>
+      <th>趣味</th>
       <td><%= @profile.hobby %></td>
     </tr>
     <tr>
-      <th>Likes</th>
+      <th>好きなこと</th>
       <td><%= @profile.likes %></td>
     </tr>
     <tr>
-      <th>Comment</th>
+      <th>一言</th>
       <td><%= @profile.comment %></td>
     </tr>
-<tfoot>
+    <tfoot>
       <tr>
         <td colspan="2" class="button-cell">
-          <%= link_to '編集', edit_profile_path(@profile), class: 'btn btn-primary' %> |
-          <%= link_to '戻る', root_path, class: 'btn btn-secondary' %>
+          <%= link_to '編集', edit_profile_path(@profile), class: 'edit-botton' %>
         </td>
       </tr>
     </tfoot>
