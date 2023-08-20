@@ -14,7 +14,7 @@
   }
 }
 
-/* Set base font */
+/* トップページ */
 #page-a {
   font-family: Arial, sans-serif;
   display: flex;
@@ -33,11 +33,12 @@
 }
 
 .keymsg {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 3.0rem;
-  font-weight: 500;
-  padding: 0.3em 0.6em;
-  background-color: #FCFCFA;
+  font-family: 'Zen Maru Gothic', sans-serif;;
+  font-size: 2.0rem;
+  font-weight: 900;
+  padding: 0.3em 6.0em;
+  background-color: transparent;
+  color: #0b0101;
 }
 
 /*新規登録簿ボタン */
@@ -109,6 +110,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px; /* 要素全体を右に20px移動 */
+  margin-top: 20px; /* 要素全体を下に20px移動 */
   margin-left: 25px; /* 要素全体を右に20px移動 */
 }
 

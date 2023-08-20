@@ -5,6 +5,9 @@
 .user-row {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #ccc; /* 下の境界線のスタイルと色を設定 */
+  padding: 10px 0; /* 上下の余白を設定 */
+  margin: 10px 0; /* 区切り線の上下のマージンを設定 */
 }
 
 .user-icon {
