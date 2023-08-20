@@ -27,6 +27,8 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'faker'
 gem 'rexml'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -20,7 +20,7 @@ RSpec.describe 'AIニックネーム命名に関するテスト', type: :system 
     context 'AIニックネームをクリックすると' do
       it 'ニックネームが命名される' do
         click_on 'マイページ'
-        click_on 'AIにニックネームをつけてもらう'
+        click_on 'AIにニックネームをつけてもらおう!!'
         expect(page).to have_content 'chatGPTによるニックネーム命名'
       end
     end
