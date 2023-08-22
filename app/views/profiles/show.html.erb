@@ -10,62 +10,64 @@
     <% end %>
   </div>
 
-  <div class="profile-actions">
+  <div class="favorite-actions">
     <% if @favorite.present? %>
-      <%= link_to 'お気に入り解除する', favorites_path(profile_id: @profile.id), method: :delete, remote: true, class: 'btn btn-secondary', id: "js-favorites-delete-button" %>
+      <%= link_to 'お気に入り解除する', favorites_path(profile_id: @profile.id), method: :delete, remote: true, class: 'unfavorite-button', id: "js-favorites-delete-button" %>
     <% else %>
-      <%= link_to 'お気に入りする', favorites_path(profile_id: @profile.id), method: :post, remote: true, class: 'btn btn-secondary', id: "js-favorites-create-button" %>
-    <% end %>
-
-    <% if current_user.following?(@profile.user) %>
-      <%= link_to "フォローを外す", user_relationships_path(@profile.user.id), method: :delete, class: 'btn btn-secondary' %>
-    <% else %>
-      <%= link_to "フォローする", user_relationships_path(@profile.user.id), method: :post, class: 'btn btn-primary' %>
-    <% end %>
-
-    <% if current_user.following?(@profile.user) && @profile.user.following?(current_user) %>
-      <%= link_to 'DMをする', rooms_path(sender_id: current_user.id, recipient_id: @profile.user.id), method: :post, class: "ml-3" %>
+      <%= link_to '♥️お気に入りする', favorites_path(profile_id: @profile.id), method: :post, remote: true, class: 'favorite-button', id: "js-favorites-create-button" %>
     <% end %>
   </div>
 
-  <h2><%= @profile.name %>さんとの相性</h2>
-  <p class="love-match"><%= "相性率: #{@love_match}%" %></p>
+  <div class="border-box">
+    <h2><%= @profile.name %>さんとの相性</h2>
+    <p class="love-match"><i class="fas fa-hand-holding-heart"></i><%= " 相性率: #{@love_match}%" %></p>
+  </div>
 </div>
 
-  <table class="table table-bordered">
-    <tr>
-      <th>名前</th>
-      <td><%= @profile.name %></td>
-    </tr>
-    <tr>
-      <th>性別</th>
-      <td><%= @profile.sex %></td>
-    </tr>
-    <tr>
-      <th>年齢</th>
-      <td><%= @profile.age %>歳</td>
-    </tr>
-    <tr>
-      <th>仕事</th>
-      <td><%= @profile.work %></td>
-    </tr>
-    <tr>
-      <th>趣味</th>
-      <td><%= @profile.hobby %></td>
-    </tr>
-    <tr>
-      <th>好きなこと</th>
-      <td><%= @profile.likes %></td>
-    </tr>
-    <tr>
-      <th>一言</th>
-      <td><%= @profile.comment %></td>
-    </tr>
-    <tfoot>
-      <tr>
-        <td colspan="2" class="button-cell">
-          <%= link_to '戻る', profiles_path, class: "back-button" %>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+<table class="table table-bordered">
+  <tr>
+    <th>名前</th>
+    <td><%= @profile.name %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= @profile.sex %></td>
+  </tr>
+  <tr>
+    <th>年齢</th>
+    <td><%= @profile.age %>歳</td>
+  </tr>
+  <tr>
+    <th>仕事</th>
+    <td><%= @profile.work %></td>
+  </tr>
+  <tr>
+    <th>趣味</th>
+    <td><%= @profile.hobby %></td>
+  </tr>
+  <tr>
+    <th>好きなこと</th>
+    <td><%= @profile.likes %></td>
+  </tr>
+  <tr>
+    <th>一言</th>
+    <td><%= @profile.comment %></td>
+  </tr>
+</table>
+
+<div class="button-container" style="display: flex; justify-content: center; align-items: center;">
+  <div class="follow-actions">
+    <% if current_user.following?(@profile.user) %>
+      <%= link_to "フォローを外す", user_relationships_path(@profile.user.id), method: :delete, class: 'unfollow-button' %>
+    <% else %>
+      <%= link_to "フォローする", user_relationships_path(@profile.user.id), method: :post, class: 'follow-button' %>
+    <% end %>
+  </div>
+  <div class="message-actions">
+    <% if current_user.following?(@profile.user) && @profile.user.following?(current_user) %>
+      <%= link_to rooms_path(sender_id: current_user.id, recipient_id: @profile.user.id), method: :post, class: "dm-button ml-3" do %>
+        <i class="far fa-envelope fa-2x"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

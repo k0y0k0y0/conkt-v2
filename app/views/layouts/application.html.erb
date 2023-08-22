@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ApplicationTest</title>
+  <title>CONKT</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300&family=Noto+Sans+JP&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300&family=Noto+Sans+JP&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -27,16 +28,16 @@
         <% end %>
 
         <% if user_signed_in? && current_user.profile.present? && current_user.answer.present? %>
-          <%= link_to "マイページ", pages_show_path %>
-          <%= link_to "参加者一覧", profiles_path %>
-          <%= link_to "気になる一覧", favorites_path %>
-          <%= link_to "メッセージ一覧", rooms_path %>
-          <%= link_to "ログアウト >", destroy_user_session_path, method: :delete %>
+          <i class="fas fa-user"></i><%= link_to "マイページ", pages_show_path %>
+          <i class="fas fa-users"></i><%= link_to "参加者一覧", profiles_path %>
+          <i class="far fa-heart"></i><%= link_to "気になる一覧", favorites_path %>
+          <i class="far fa-paper-plane"></i><%= link_to "メッセージ一覧", rooms_path %>
+          <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
-          <%= link_to 'ゲストログイン(閲覧用）', users_guest_sign_in_path, method: :post, class: "btn" %>
-          <%= link_to '管理者ログイン(閲覧用)', users_admin_guest_sign_in_path, method: :post, class: "btn" %>
+          <i class="fas fa-user-plus"></i><%= link_to "新規登録", new_user_registration_path %>
+          <i class="fas fa-sign-in-alt"></i><%= link_to "ログイン", new_user_session_path %>
+          <i class="fas fa-eye"></i><%= link_to 'ゲストログイン(閲覧用）', users_guest_sign_in_path, method: :post, class: "btn" %>
+          <i class="fas fa-lock"></i><%= link_to '管理者ログイン(閲覧用)', users_admin_guest_sign_in_path, method: :post, class: "btn" %>
         <% end %>
         </div>
       </nav>

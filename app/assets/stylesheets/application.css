@@ -23,8 +23,7 @@
 
 html, body {
   font-family: 'Zen Maru Gothic', sans-serif;
-  background-color: #f5f1eb;
-  background: linear-gradient(to left, #f5f1eb, #edeae7);
+  background-color: #ffffff;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -38,8 +37,27 @@ body {
 }
 
 header {
-  color: rgb(255, 255, 255);
+  background-color: #ffffff; /* 背景色を透明度付きの黒に設定 */
   width: 100%; /* 横幅を100%に設定 */
+  height: 70px; /* 縦幅を100pxに設定 */
+  position: fixed; /* 要素を固定位置に配置 */
+  top: 0; /* 上端に固定 */
+  left: 0; /* 左端に固定 */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-right i {
+  margin-right: -6px; /* アイコンの右側に余白を追加 */
+}
+
+#page-a header {
+  background-color: transparent; /* 背景色を透明度付きの黒に設定 */
+  color: black; /* 文字色を黒に設定 */
+  width: 100%; /* 横幅を100%に設定 */
+  height: 0px; /* 縦幅を100pxに設定 */
+  position: fixed; /* 要素を固定位置に配置 */
+  top: 0; /* 上端に固定 */
+  left: 0; /* 左端に固定 */
 }
 
 .nav {
@@ -58,27 +76,28 @@ header {
 }
 
 .logo {
-  height: 150px;
-  margin-top: 40px;
+  height: 120px;
+  margin-top: -10px;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
+  margin-top: -30px;
 }
 
 .nav a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(7, 1, 1);
   margin: 0 10px;
   font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-/* Style alerts */
 .alert {
   padding: 10px;
   margin: 10px 0;
   border-radius: 4px;
+  margin-top: 80px;
 }
 
 .alert-notice {
@@ -91,7 +110,6 @@ header {
   color: white;
 }
 
-
 main {
   padding: 0; /* 余白をなくす */
   background-color: transparent;
@@ -99,6 +117,8 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 1;
   width: 100%; /* 横幅を画面幅いっぱいに設定 */
+  height: 100vh;
+  overflow: auto;
   text-align: center; /* テキストを中央寄せに */
   line-height: 3;
 }
@@ -106,12 +126,9 @@ main {
 footer {
   background-color: transparent; /* フッターの背景色 */
   color: rgb(255, 255, 255);
-  padding: 15px 0; /* ヘッダーと同じ高さに設定 */
   text-align: right;
   width: 100%; /* フッターを画面幅いっぱいに */
-  box-sizing: border-box; /* パディングを含めたボックスサイズ */
   bottom: 0; /* 下端に配置 */
-
 }
 
 .footer-content {

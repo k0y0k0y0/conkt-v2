@@ -1,4 +1,6 @@
-<h1>参加者一覧</h1>
+<div class="top-title">
+  <h1>参加者一覧</h1>
+</div>
 
 <table>
   <body>
@@ -10,13 +12,19 @@
             <% if profile.icon.present? %>
               <%= link_to profile_path(profile) do %>
                 <%= image_tag profile.icon.url, class: 'mypage-icon' %>
-                <div class="profile-name-top"><%= profile.name %></div>
+                <div class="profile-name-top">
+                  <%= profile.name %>/<%= profile.work %> <br>
+                  <i class="fas fa-comment-dots fa-flip-horizontal"></i><%= profile.comment %>
+                </div>
               <% end %>
             <% else %>
               <% default_icon = Profile.default_icons.sample %>
               <%= link_to profile_path(profile) do %>
                 <%= image_tag default_icon, class: 'mypage-icon' %>
-                <div class="profile-name-top"><%= profile.name %></div>
+                <div class="profile-name-top">
+                  <%= profile.name %>/<%= profile.work %>
+                  <%= profile.comment %>
+                </div>
               <% end %>
             <% end %>
           </td>
