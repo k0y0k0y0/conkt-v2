@@ -4,7 +4,6 @@ class ChatbotsController < ApplicationController
     @profile = current_user.profile
     #chatGPT
     @user = User.find_by(id: current_user.id)
-    # @profile = @user.profile
     likes = @profile.likes
     hobby = @profile.hobby
     work = @profile.work

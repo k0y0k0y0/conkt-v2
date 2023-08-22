@@ -1,22 +1,19 @@
 <div class="container">
-  <h1><%= current_user.profile.name %>さんのマイページです</h1>
+  <div class="my-icon-container">
+    <div class="profile-title">
+      <h1><%= current_user.profile.name %>さんのマイプロフィール</h1>
+    </div>
+    <div class="my-icon">
+      <%= image_tag @profile.icon.url %>
+    </div>
+    <td colspan="2" class="button-cell">
+      <div class="edit-button-container">
+        <%= link_to '編集', edit_profile_path(@profile), class: 'edit-button-ellipse' %>
+      </div>
+    </td>
 
-  <div class="my-icon">
-    <%= image_tag @profile.icon.url %>
-  </div>
-
-  <div class="button_line004">
-    <%= link_to 'AIにニックネームをつけてもらおう!!', chatbots_path(@profile), class: 'btn btn-primary' %>
-  </div>
-
-  <div class="image-chatrobot">
-    <a href="<%= chatbots_path(@profile) %>">
-      <img src="<%= asset_path('chatbot.png') %>" alt="ロボット画像">
-    </a>
-  </div>
-
-  <table class="table table-bordered">
-    <tr>
+    <table class="table table-bordered">
+      <tr>
       <th>名前</th>
       <td><%= @profile.name %></td>
     </tr>
@@ -44,12 +41,19 @@
       <th>一言</th>
       <td><%= @profile.comment %></td>
     </tr>
-    <tfoot>
-      <tr>
-        <td colspan="2" class="button-cell">
-          <%= link_to '編集', edit_profile_path(@profile), class: 'edit-botton' %>
-        </td>
-      </tr>
-    </tfoot>
+    <tr>
+      <th>AIニックネーム</th>
+      <td><%=  %></td>
+    </tr>
   </table>
+
+    <div class="button_line004">
+      <%= link_to '簡単「10秒」AIがあなたのニックネームを自動作成!', chatbots_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="image-chatrobot">
+      <a href="<%= chatbots_path(@profile) %>">
+        <img src="<%= asset_path('chatbot.png') %>" alt="ロボット画像">
+      </a>
+    </div>
+  </div>
 </div>

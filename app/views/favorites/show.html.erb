@@ -1,4 +1,6 @@
-<h1>お気に入りをしているユーザー一覧</h1>
+<div class="top-title">
+  <h1>気になる一覧</h1>
+</div>
 
 <div class="favorites-container">
   <% @favorites.each_slice(5) do |favorites_group| %>
@@ -6,10 +8,10 @@
       <% favorites_group.each do |favorite| %>
         <div class="favorite-item">
           <%= link_to profile_path(favorite.profile) do %>
-            <div class="profile-icon">
+            <div class="profile-icon-favorite">
             <%= image_tag favorite.profile.icon.url, class: 'profile-icon' %>
             </div>
-            <div class="profile-name-top">
+            <div class="profile-name-favorite">
               <%= favorite.profile.name %>
             </div>
           <% end %>

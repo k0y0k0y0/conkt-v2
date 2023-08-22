@@ -2,10 +2,10 @@
   <% unless @chats.blank? %>
     <% @chats.each do |chat| %>
       <% if chat.message.present? %>
-        <div class="item">
-          <div class="content">
-            <div class="user-row">
-              <div class="user-icon">
+        <div class="item-chats">
+          <div class="content-chats">
+            <div class="user-row-chats">
+              <div class="user-icon-chats">
                 <% if chat.user == current_user %>
                   <%= link_to pages_show_path, class: "no-underline" do %>
                     <%= image_tag chat.user.profile.icon.url, alt: "#{chat.user.profile.name}のアイコン", class: "profile-icon" %>
@@ -21,13 +21,12 @@
                   <strong><%= link_to chat.user.profile.name, profile_path(chat.user.profile) %></strong> <%= chat.message_time %>
                 </div>
                 <div class="list">
-                  <div class="item">
-                    <i class="right triangle icon"></i>
-                    <%= chat.message %> /
+                  <div class="item speech-bubble">
+                    <%= chat.message %>
+                  </div>
                     <% if chat.user == current_user %>
                       <%= chat.read ? '既読' : '未読' %>
                     <% end %>
-                  </div>
                 </div>
               </div>
             </div>
@@ -43,4 +42,3 @@
     <%= flash[:alert] %>
   </div>
 <% end %>
-

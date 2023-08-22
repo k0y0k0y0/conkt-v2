@@ -19,17 +19,22 @@
 
 /* アイコンと名前のスタイル */
 .profile-icon {
-  width: 300px;
-  height: 300px;
-  object-fit: contain; /* 画像を切り取らずに収める */
-  display: block;
-  margin: 0 auto; /* アイコンを中央寄せ */
-  border-radius: 50%; /* 丸い枠 */
-  padding: 8px; /* 枠からアイコンまでの間隔を調整 */
+  width: 180px; /* 丸の幅を大きく */
+  height: 180px; /* 丸の高さを大きく */
+  border-radius: 50%;
+  overflow: visible; /* 画像がアイコン外にはみ出すように変更 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(193, 197, 198); /* 白い背景色を追加 */
+  border: 3px solid rgb(255, 255, 255);
+  margin-top: 20px; /* アイコンとテキストの間隔を調整 */
+  margin-bottom: 20px; /* 下の余白を追加 */
 }
 
 
-.profile-name-top {
+.profile-name-favorite {
   font-size: 12px;
-  margin-top: 5px; /* 名前とアイコンの間隔 */
+  margin-top: 1px; /* 名前とアイコンの間隔 */
+  color: black;
 }

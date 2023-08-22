@@ -4,3 +4,79 @@
 .alert-danger {
   color: red;
 }
+
+.message-submit {
+  margin-top: 5%;
+}
+
+.speech-bubble {
+  background-color: rgb(234, 233, 233); /* 吹き出しの背景色を白に設定 */
+  padding: 0 10px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 80%; /* 最大幅を指定して横幅を調整 */
+  position: relative;
+  margin-bottom: 10px; /* 吹き出し間の余白を設定 */
+  text-align: left;
+}
+
+.speech-bubble:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  border: 8px solid transparent;
+  border-right-color: rgb(234, 233, 233);
+  transform: translateY(-50%);
+}
+
+/* メッセージエリアの背景色をクリーム色に設定 */
+.ui.segment.chats_area {
+  background-color: #ffffff;
+}
+
+/* メッセージの文字色を黒に設定 */
+.item .user-info .list .speech-bubble {
+  color: black;
+}
+
+.ui.segment.chats_area {
+  margin-top: 100px;
+}
+
+/* メッセージエリア内のリンクの下線をなくす */
+.ui.segment.chats_area a {
+  text-decoration: none;
+}
+
+.user-row-chats {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon-chats {
+  margin-right: 10px;
+}
+
+// アイコンの大きさ
+.user-icon-chats img {
+  width: 70px; /* アイコンの固定幅 */
+  height: 70px; /* アイコンの固定高さ */
+  border-radius: 50%;
+  object-fit: cover; /* 画像を縦横比を保ちつつ収める */
+  object-position: center center; /* 画像の中央に配置 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(193, 197, 198); /* 白い背景色を追加 */
+  border: 3px solid rgb(255, 255, 255);
+  margin-top: 20px; /* アイコンとテキストの間隔を調整 */
+  margin-bottom: 20px; /* 下の余白を追加 */
+}
+
+.message-details {
+  color: #999;
+  font-size: 12px;
+  margin-top: 2px;
+}
+

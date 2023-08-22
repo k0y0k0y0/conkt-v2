@@ -1,3 +1,70 @@
-// Place all the styles related to the relationships controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.container-signin {
+  text-align: center;
+  background-color: #fff;
+}
+
+.signin-title {
+  font-size: 20px;
+  margin: 60px 10px; /* マージンを調整 */
+  color: #333;
+}
+
+.field {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.field label {
+  flex: 0 0 150px;
+  font-weight: bold;
+  color: #555;
+}
+
+.field input[type="email"],
+.field input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.actions input[type="submit"] {
+  display: inline-block;
+  padding: 10px 100px; /* ボタンのパディングを調整 */
+  background-color: transparent; /* 透明な背景色 */
+  color: rgb(209, 151, 161); /* ピンクの文字色 */
+  border: 2px solid rgb(209, 151, 161); /* ピンクの境界線を設定 */
+  border-radius: 100px; /* 楕円形のボーダーラジウスを設定 */
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.7; /* 透過度を設定 */
+  transition: opacity 0.3s ease-in-out; /* 透過度のトランジションを設定 */
+}
+
+.actions input[type="submit"]:hover {
+  opacity: 1; /* ホバーエフェクトで透過度を元に戻す */
+  background-color: pink; /* ピンクの背景色 */
+  color: white; /* 白の文字色 */
+}
+
+.links {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}
+
+.links a {
+  color: #eae9d6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #eae9d6;
+}

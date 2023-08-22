@@ -1,7 +1,11 @@
 /*参加者一覧ページ*/
+.top-title {
+  margin-top: 70px;
+  font-size: 10px;
+}
+
 .participants-row {
   display: flex;
-
   margin: 0 auto;
   gap: 60px; /* アイコン同士の間隔を調整 */
   max-width: 1200px; /* 最大幅を設定 */
@@ -18,8 +22,9 @@
 
 .profile-name-top {
   font-size: 12px;
-  margin-top: -5px;
+  margin-top: -35px;
   color: black;
+  line-height: 1.2;
 }
 
 /* メディアクエリ：画面幅が1200px未満の場合にスタイルを調整 */
@@ -40,33 +45,30 @@
     margin-bottom: 20px;
   }
 
-  .mypage-icon {
-    max-width: 200px;
-    height: 200px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 50%;
-    padding: 8px;
-  }
+.mypage-icon {
+  width: 180px; /* 丸の幅を大きく */
+  height: 180px; /* 丸の高さを大きく */
+  border-radius: 50%;
+  overflow: visible; /* 画像がアイコン外にはみ出すように変更 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(193, 197, 198); /* 白い背景色を追加 */
+  border: 3px solid rgb(255, 255, 255);
+  margin-top: 20px; /* アイコンとテキストの間隔を調整 */
+  margin-bottom: 20px; /* 下の余白を追加 */
+}
 
-  .profile-table {
-    margin: 0 auto;
-  }
+.profile-table {
+  margin: 0 auto;
+}
 
-/*詳細ページ*/
 .profile-details {
   text-align: center;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.profile-actions {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin-top: 10px;
 }
 
 .profile-icon img {
@@ -76,21 +78,108 @@
   padding: 8px;
 }
 
+/*相性診断結果*/
 .love-match {
-  font-size: 24px;
+  font-size: 40px;
+  font-weight: bold; /* 文字を太字に設定 */
   color: #d74a30;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  line-height: 1;
+  padding-bottom: 20px;
 }
 
-.back-button {
-  background-color: rgb(235, 222, 185); /* 黒色に変更 */
-  color: rgb(52, 37, 37); /* テキスト色を白に設定 */
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+.border-box {
+  padding: 10px 50px; /* 要素の内側に余白を設定 */
+  text-align: center; /* テキストを中央に配置 */
+  margin-top: 20px;
+
+  /* 上下に棒線を追加 */
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc
+}
+
+
+/* お気に入りボタン */
+.favorite-button, .unfavorite-button {
+  display: inline-block;
+  padding: 0.5px 100px; /* ボタンのパディングを調整 */
+  background-color: transparent; /* 透明な背景色 */
+  color: rgb(209, 151, 161); /* ピンクの文字色 */
+  border: 2px solid rgb(209, 151, 161); /* ピンクの境界線を設定 */
+  border-radius: 100px; /* 楕円形のボーダーラジウスを設定 */
   text-align: center;
   text-decoration: none;
-  cursor: pointer;
+  opacity: 0.7; /* 透過度を設定 */
+  transition: opacity 0.3s ease-in-out;
+  margin-top: 10px;
 }
+
+.favorite-button:hover, .unfavorite-button:hover {
+  opacity: 1; /* ホバーエフェクトで透過度を元に戻す */
+  background-color: pink; /* ピンクの背景色 */
+  color: white; /* 白の文字色 */
+}
+
+/* ボタンを横並びに配置するコンテナ */
+.button-container {
+  display: flex;
+  gap: 10px; /* ボタン間の間隔 */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* フォローボタンコンテナ */
+.follow-button-container {
+  display: flex;
+  align-items: center;
+}
+
+/* DMボタンコンテナ */
+.dm-button-container {
+  display: flex;
+  align-items: center;
+}
+
+/* フォローボタン */
+.follow-button, .unfollow-button {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: rgb(96, 79, 55);
+  border: 2px solid rgb(201, 196, 189);
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.follow-button:hover, .unfollow-button:hover {
+  opacity: 1;
+  background-color: rgb(117, 103, 91);
+  color: white;
+}
+
+/* DMボタン */
+.dm-button {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: rgb(84, 79, 73);
+  border: 2px solid rgb(201, 196, 189);
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dm-button:hover {
+  opacity: 1;
+  background-color: rgb(117, 103, 91);
+  color: rgb(255, 255, 255);
+}
+
 /*プロフィール新規作成のラジオボタン*/
 .sex-field label {
   margin-right: 10px; /* ラベルの右側の余白を調整 */
