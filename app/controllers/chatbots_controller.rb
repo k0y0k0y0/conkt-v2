@@ -2,7 +2,6 @@ class ChatbotsController < ApplicationController
 
   def index
     @profile = current_user.profile
-    #chatGPT
     @user = User.find_by(id: current_user.id)
     likes = @profile.likes
     hobby = @profile.hobby

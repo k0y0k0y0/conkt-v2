@@ -1,10 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
-
-  #男女の番号を保存させる
   enum sex: { 男性: 0, 女性: 1}
-  #アイコンuploderを追加
   mount_uploader :icon, IconUploader
   validates :name, presence: true
   validates :sex, presence: true

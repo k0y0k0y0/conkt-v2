@@ -23,7 +23,7 @@ RSpec.describe 'DMメッセージに関するテスト', type: :system do
       it 'メッセージが送信できない' do
           chat.message = 'message' * 201
           expect(chat).not_to be_valid
-        end
       end
     end
   end
+end

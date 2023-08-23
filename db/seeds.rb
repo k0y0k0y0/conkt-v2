@@ -1,4 +1,4 @@
-require 'faker'
+# require 'faker'
 
 #質問内容
 Question.create!(content: "どちらかというとインドア派よりアウトドア派だ")
@@ -63,4 +63,4 @@ Question.create!(content: "全てを投げ出して、船で世界を旅しな�
 #       profile_id: other_user_id
 #     )
 #   end
-end
+# end

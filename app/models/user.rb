@@ -1,9 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
-
   validates :email,  length: { maximum: 50 }
-
   has_one :profile, dependent: :destroy
 
   # フォローをした、されたの関係
@@ -22,7 +20,6 @@ class User < ApplicationRecord
 
   #お気に入り機能
   has_many :favorites, dependent: :destroy
-
 
   # フォローしたときの処理
   def follow(user_id)

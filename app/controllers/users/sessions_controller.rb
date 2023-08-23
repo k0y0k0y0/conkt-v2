@@ -16,7 +16,6 @@ class Users::SessionsController < Devise::SessionsController
     )
     profile.save
 
-    #相性診断(全てtrue)
     answer = user.answer || user.build_answer
     answer.assign_attributes(
       response: [true] * 15

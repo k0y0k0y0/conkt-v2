@@ -9,7 +9,6 @@ RSpec.describe Room, type: :model do
       it 'チャットルームを取得できる' do
         room = FactoryBot.create(:room, sender: user, recipient: second_user)
       result = Room.between(user, second_user)
-
       expect(result).to include(room)
       end
     end
@@ -18,7 +17,6 @@ RSpec.describe Room, type: :model do
       it 'チャットルームを取得できない' do
         room = FactoryBot.create(:room, sender: user, recipient: user)
         result = Room.between(user, second_user)
-
         expect(result).not_to include(room)
       end
     end
