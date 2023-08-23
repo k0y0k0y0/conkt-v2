@@ -31,12 +31,9 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'unicorn'
 
-
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
   gem 'spring-commands-rspec'
-  gem 'factory_bot_rails'
   gem 'launchy'
   gem 'spring'
   gem 'capistrano', '3.16.0'
@@ -55,8 +52,10 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'capybara', '>= 2.15'
   gem "selenium-webdriver"
+  gem 'factory_bot_rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
