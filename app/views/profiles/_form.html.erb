@@ -17,12 +17,13 @@
     </div>
   <% end %>
 
-<div class="field">
-  <%= form.label :icon, "プロフィール画像" %>
-  <%= form.file_field :icon %>
-</div>
+<div class="profile-new">
+  <div class="profile-field">
+    <%= form.label :icon, "アイコン" %>
+    <%= form.file_field :icon %>
+  </div>
 
-  <div class="field">
+  <div class="profile-field">
     <%= form.label :name %>
     <%= form.text_field :name, placeholder: "山田 太郎" %>
   </div>
@@ -35,30 +36,31 @@
     <span class="radio-label">女性</span>
   </div>
 
-  <div class="field">
+  <div class="profile-field">
     <%= form.label :age %>
     <%= form.text_field :age, placeholder: "35" %>
   </div>
 
-  <div class="field">
+  <div class="profile-field">
     <%= form.label :work %>
     <%= form.text_field :work, placeholder: "会社員" %>
   </div>
 
-  <div class="field">
+  <div class="profile-field">
     <%= form.label :hobby %>
     <%= form.text_field :hobby, placeholder: "料理" %>
   </div>
 
-  <div class="field">
+  <div class="profile-field">
     <%= form.label :likes %>
     <%= form.text_field :likes, placeholder: "食べること" %>
   </div>
 
-  <div class="field">
+  <div class="profile-field">
     <%= form.label :comment %>
     <%= form.text_field :comment, placeholder: "宜しくお願いします！" %>
   </div>
+</div>
 
   <div class="actions">
     <%= form.submit "登録", class: "submit-button" %>

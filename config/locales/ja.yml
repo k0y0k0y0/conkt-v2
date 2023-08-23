@@ -19,7 +19,7 @@ ja:
         message: メッセージ
         read: 既読/未読
       profile:
-        icon: プロフィール画像
+        icon: アイコン
         name: 名前
         sex: 性別
         age: 年齢

@@ -27,7 +27,7 @@
           <%= link_to '管理者ログイン', rails_admin_path %>
         <% end %>
 
-        <% if user_signed_in? && current_user.profile.present? && current_user.answer.present? %>
+        <% if user_signed_in?  %>
           <i class="fas fa-user"></i><%= link_to "マイページ", pages_show_path %>
           <i class="fas fa-users"></i><%= link_to "参加者一覧", profiles_path %>
           <i class="far fa-heart"></i><%= link_to "気になる一覧", favorites_path %>
