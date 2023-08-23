@@ -1,3 +1,42 @@
-// Place all the styles related to the chatbots controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.chatbot-answer {
+  margin-top: 100px;
+}
+.chatbot-answer {
+  padding: 20px; /* 内側の余白 */
+  background-color: #f9f9f9; /* 背景色 */
+  border-radius: 5px; /* 角丸 */
+}
+
+.chatbot-answer p:first-child {
+  font-size: 24px; /* ニックネーム命名のフォントサイズ */
+  font-weight: bold; /* 太字 */
+}
+
+.chatbot-answer p:nth-child(2) {
+  font-size: 18px; /* 質問文のフォントサイズ */
+  margin-top: 10px; /* 上のマージン */
+}
+
+.answer-box {
+  padding: 10px; /* 内側の余白 */
+  background-color: #fff; /* 背景色 */
+  border: 2px solid #594f3d; /* 枠線の色 */
+  border-radius: 5px; /* 角丸 */
+  font-size: 20px; /* 回答のフォントサイズ */
+  margin-top: 20px; /* 上のマージン */
+}
+
+
+.actions-chatbot {
+  text-align: center;
+  margin-top: 60px;
+  display: inline-block;
+  padding: 10px 100px; /* ボタンのパディングを調整 */
+  background-color: transparent; /* 透明な背景色 */
+  color: rgb(170, 123, 131); /* ピンクの文字色 */
+  border: 2px solid rgb(209, 151, 161); /* ピンクの境界線を設定 */
+  border-radius: 100px; /* 楕円形のボーダーラジウスを設定 */
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.7; /* 透過度を設定 */
+}

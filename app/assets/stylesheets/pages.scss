@@ -16,17 +16,12 @@
   justify-content: center; /* コンテンツを縦方向にも中央に配置 */
   width: 100%;
   color: #332105;
-
   // background-image: url('love.jpg');
   background-image: image-url('love.jpg');
   background-position: center;
   background-size: cover;
   height: 100%;
   position: relative;
-}
-
-.keymsgs {
-  margin-top: 45px; /* 全体的に下に余白を追加 */
 }
 
 .keymsg {
@@ -40,7 +35,7 @@
 /*新規登録簿ボタン */
 .button_solid015 {
   text-align: center;
-  margin-top: 20px; /* ボタンを下に移動 */
+  margin-top: 80px; /* ボタンを下に移動 */
 }
 
 .button_solid015 p {
@@ -101,12 +96,11 @@
 
 /*機能紹介*/
 .container {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px; /* 要素全体を右に20px移動 */
-  margin-top: 20px; /* 要素全体を下に20px移動 */
+  margin-top: 100px; /* 要素全体を下に20px移動 */
   margin-left: 25px; /* 要素全体を右に20px移動 */
 }
 
@@ -122,6 +116,7 @@
   background-size: cover;
   background-position: center;
   padding: 10px;
+
 }
 
 .image-container img {
@@ -169,24 +164,25 @@ a {
 }
 
 .my-icon {
-  width: 180px; /* 丸の幅を大きく */
-  height: 180px; /* 丸の高さを大きく */
+  width: 180px; /* 幅と高さを同じ値に設定 */
+  height: 180px;
   border-radius: 50%;
-  overflow: visible; /* 画像がアイコン外にはみ出すように変更 */
+  overflow: hidden; /* 画像が円形からはみ出さないようにする */
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(193, 197, 198); /* 白い背景色を追加 */
-  border: 3px solid rgb(255, 255, 255);
-  margin-top: 20px; /* アイコンとテキストの間隔を調整 */
-  margin-bottom: 20px; /* 下の余白を追加 */
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(242, 234, 234);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .my-icon img {
   max-width: 100%;
-  max-height: 100%; /* 画像の高さも調整 */
+  max-height: 100%;
   display: block;
 }
+
 
 .profile-title {
   font-size: 10px;

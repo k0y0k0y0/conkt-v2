@@ -22,7 +22,7 @@
   width: 180px; /* 丸の幅を大きく */
   height: 180px; /* 丸の高さを大きく */
   border-radius: 50%;
-  overflow: visible; /* 画像がアイコン外にはみ出すように変更 */
+  overflow: hidden;
   display: inline-flex;
   justify-content: center;
   align-items: center;

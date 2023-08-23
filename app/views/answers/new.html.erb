@@ -9,13 +9,13 @@
         <span class="question-number">Q<%= index + 1 %></span>
         <%= question.content %>
       </p>
-      <div class="radio-options">
+      <div class="radio-options-yes">
         <%= f.radio_button :response, true, name: "answers[#{index}][response]", id: "answer_#{index}_response_true" %>
-        <%= f.label :response, 'はい' %>
+        <%= f.label :response, 'はい', class: 'radio-yes' %>
         <%= f.radio_button :response, false, name: "answers[#{index}][response]", id: "answer_#{index}_response_false" %>
-        <%= f.label :response, 'いいえ' %>
+        <%= f.label :response, 'いいえ', class: 'radio-yes'  %>
       </div>
     </div>
   <% end %>
-  <%= f.submit '登録', class: 'submit-button' %>
+  <%= f.submit '登録', class: 'submit-answer-button' %>
 <% end %>
