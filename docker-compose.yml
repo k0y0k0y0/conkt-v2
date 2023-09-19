@@ -1,0 +1,35 @@
+services:
+  #dbコンテナ
+  CONKT_test:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - CONKT_test:/var/lib/mysql
+  #webコンテナ
+  web:
+    build: .
+    depends_on:
+      - CONKT_test
+    environment:
+      DATABASE_PASSWORD: password
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/conkt-v2
+  webpacker:
+    build: .
+    volumes:
+      - .:/conkt-v2
+      - bundle:/usr/local/bundle
+    command: ./bin/webpack-dev-server
+    environment:
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    ports:
+      - "3035:3035"
+volumes:
+  CONKT_test:
+    driver: local
+  bundle:
+    driver: local
