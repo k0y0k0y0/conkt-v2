@@ -3,13 +3,10 @@ RUN apt-get update -qq
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
 && apt-get install -y nodejs
 
-#docker内の作業ディレクトリを作成＆設定
 WORKDIR /conkt-v2
 
-#Gemfile,Gemfile.lockをローカルからCOPY
 COPY Gemfile Gemfile.lock /conkt-v2/
 
-#コンテナ内にコピーしたGemfileを用いてbundel install
 RUN bundle config set --global force_ruby_platform true
 RUN bundle install
 
@@ -30,5 +27,4 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 
 COPY . ./
 
-#railsを起動する
 CMD ["rails", "server", "-b", "0.0.0.0"]
