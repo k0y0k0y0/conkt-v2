@@ -23,6 +23,18 @@ $ rails db:create
 $ rails db:migrate
 $ rails s
 ```
+
+## 実行手順（Docker）
+
+Docker が実行できることを前提とする。
+
+```bash
+$ docker compose build --no-cache
+$ docker-compose run web rails db:create
+$ docker-compose run web rails db:migrate
+$ docker-compose up -d     
+```
+
 ## カタログ設計
 https://docs.google.com/spreadsheets/d/1hzKy_m9XlAHrNo-fmcSKu1MItFOqVcAUTCDqECsPcnM/edit#gid=782464957
 ## テーブル定義書
