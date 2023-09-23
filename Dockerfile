@@ -1,3 +1,4 @@
+FROM node:20.6.1 AS node
 FROM ruby:3.0.1
 RUN apt-get update -qq
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
