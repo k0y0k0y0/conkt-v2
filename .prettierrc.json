@@ -1,0 +1,18 @@
+{
+  "plugins": ["prettier-plugin-sh"],
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "trailingComma": "none",
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.sh", "*.yml", "*.md"],
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
+}
