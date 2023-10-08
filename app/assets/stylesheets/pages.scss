@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 #top {
@@ -31,7 +31,7 @@
   width: 100%;
   color: #332105;
   // background-image: url('love.jpg');
-  background-image: image-url("love.jpg");
+  background-image: image-url('love.jpg');
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -39,7 +39,7 @@
 }
 
 .keymsg {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
   color: #0b0101;
@@ -71,7 +71,7 @@
   height: 3px;
   border-radius: 5px;
   background-color: white;
-  content: "";
+  content: '';
 }
 
 .button_solid015 p:before {
@@ -143,7 +143,7 @@
 }
 
 .image-comment {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
   background-color: transparent;
   color: white;
   padding: 8px;

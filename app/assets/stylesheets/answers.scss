@@ -1,6 +1,6 @@
 /* チェックボックスとラジオボタンの青い背景を無効に */
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -15,8 +15,8 @@ input[type="checkbox"] {
 }
 
 /* チェックボックスとラジオボタンがチェックされた時のスタイル */
-input[type="radio"]:checked,
-input[type="checkbox"]:checked {
+input[type='radio']:checked,
+input[type='checkbox']:checked {
   background-color: #594f3d; /* チェックされた時の背景色 */
 }
 

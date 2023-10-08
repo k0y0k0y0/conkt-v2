@@ -9,7 +9,16 @@
       }
     },
     {
-      "files": ["*.sh", "*.yml", "*.md", "*.rb", "*.erb", "*.js", "Gemfile"],
+      "files": [
+        "*.sh",
+        "*.yml",
+        "*.md",
+        "*.rb",
+        "*.erb",
+        "*.js",
+        "Gemfile",
+        "*.scss"
+      ],
       "options": { "singleQuote": true }
     }
   ]

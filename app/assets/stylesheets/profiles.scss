@@ -71,7 +71,7 @@
   font-size: 40px;
   font-weight: bold; /* 文字を太字に設定 */
   color: #d74a30;
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
   line-height: 1;
   padding-bottom: 20px;
 }
@@ -182,7 +182,7 @@
   margin-left: auto; /* ラベルを左寄せにする */
 }
 
-.sex-field input[type="radio"] {
+.sex-field input[type='radio'] {
   margin-left: 33px; /* ラジオボタンの左側の余白を調整 */
 }
 
@@ -214,7 +214,7 @@
 }
 
 /* フォームラベルのスタイルを調整 */
-.profile-field input[type="text"] {
+.profile-field input[type='text'] {
   margin-left: 30px; /* テキストフィールドを右にずらす */
   white-space: nowrap;
 }
