@@ -5792,6 +5792,13 @@ prepend-http@^1.0.0:
   resolved "https://registry.npmjs.org/prepend-http/-/prepend-http-1.0.4.tgz"
   integrity sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==
 
+prettier-plugin-ruby@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.npmjs.org/prettier-plugin-ruby/-/prettier-plugin-ruby-0.3.1.tgz"
+  integrity sha512-ASJ+YpeFeSiHEU2eR1goWLqusRqSIpb2J9Fsh6loDJ8lx09peKKoV6w5ZnO5ggHBz5UHyd2HNe8Wr1gApSXXHA==
+  dependencies:
+    prettier "^1.16.4"
+
 prettier-plugin-sh@^0.13.1:
   version "0.13.1"
   resolved "https://registry.npmjs.org/prettier-plugin-sh/-/prettier-plugin-sh-0.13.1.tgz"
@@ -5799,6 +5806,11 @@ prettier-plugin-sh@^0.13.1:
   dependencies:
     mvdan-sh "^0.10.1"
     sh-syntax "^0.4.1"
+
+prettier@^1.16.4:
+  version "1.19.1"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-1.19.1.tgz"
+  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
 prettier@^3.0.0, prettier@^3.0.3:
   version "3.0.3"

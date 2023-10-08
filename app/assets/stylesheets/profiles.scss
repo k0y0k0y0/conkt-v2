@@ -32,9 +32,9 @@
 }
 
 .profile-details {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .mypage-icon {
   width: 180px; /* 丸の幅を大きく */
@@ -71,7 +71,7 @@
   font-size: 40px;
   font-weight: bold; /* 文字を太字に設定 */
   color: #d74a30;
-  font-family: 'Zen Maru Gothic', sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
   line-height: 1;
   padding-bottom: 20px;
 }
@@ -83,12 +83,12 @@
 
   /* 上下に棒線を追加 */
   border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc
+  border-bottom: 2px solid #ccc;
 }
 
-
 /* お気に入りボタン */
-.favorite-button, .unfavorite-button {
+.favorite-button,
+.unfavorite-button {
   display: inline-block;
   padding: 0.5px 100px; /* ボタンのパディングを調整 */
   background-color: transparent; /* 透明な背景色 */
@@ -103,7 +103,8 @@
   margin-bottom: 30px;
 }
 
-.favorite-button:hover, .unfavorite-button:hover {
+.favorite-button:hover,
+.unfavorite-button:hover {
   opacity: 1; /* ホバーエフェクトで透過度を元に戻す */
   background-color: pink; /* ピンクの背景色 */
   color: white; /* 白の文字色 */
@@ -133,7 +134,8 @@
 }
 
 /* フォローボタン */
-.follow-button, .unfollow-button {
+.follow-button,
+.unfollow-button {
   display: inline-block;
   padding: 0px 80px;
   background-color: transparent;
@@ -147,7 +149,8 @@
   margin-bottom: -40px;
 }
 
-.follow-button:hover, .unfollow-button:hover {
+.follow-button:hover,
+.unfollow-button:hover {
   opacity: 1;
   background-color: rgb(117, 103, 91);
   color: white;
@@ -219,6 +222,6 @@
 label {
   margin-right: 5px;
   text-align: right;
-  width:100px;
+  width: 100px;
   float: left;
 }
