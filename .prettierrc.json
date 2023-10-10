@@ -1,18 +1,25 @@
 {
-  "plugins": ["prettier-plugin-sh"],
+  "plugins": ["prettier-plugin-sh", "prettier-plugin-ruby"],
   "overrides": [
     {
       "files": "*.json",
       "options": {
-        "trailingComma": "none",
-        "singleQuote": false
+        "singleQuote": false,
+        "trailingComma": "none"
       }
     },
     {
-      "files": ["*.sh", "*.yml", "*.md"],
-      "options": {
-        "singleQuote": true
-      }
+      "files": [
+        "*.sh",
+        "*.yml",
+        "*.md",
+        "*.rb",
+        "*.erb",
+        "*.js",
+        "Gemfile",
+        "*.scss"
+      ],
+      "options": { "singleQuote": true }
     }
   ]
 }

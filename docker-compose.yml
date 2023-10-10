@@ -15,7 +15,7 @@ services:
     environment:
       DATABASE_PASSWORD: password
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - .:/conkt-v2
   webpacker:
@@ -27,7 +27,7 @@ services:
     environment:
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
     ports:
-      - "3035:3035"
+      - '3035:3035'
 volumes:
   CONKT_test:
     driver: local
